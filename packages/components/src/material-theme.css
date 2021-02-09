@@ -1,0 +1,11 @@
+:root {
+  --surface-color: #323232;
+  --on-surface-color: white;
+  --border-radius: 0.25rem;
+  --success-color: green;
+  --on-success-color: green;
+  --error-color: red;
+  --on-error-color: white;
+  --info-color: blue;
+  --on-info-color: blue;
+}

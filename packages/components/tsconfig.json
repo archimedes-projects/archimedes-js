@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "exclude": ["node_modules"],
+  "include": ["src", "types/jsx.d.ts"],
+  "compilerOptions": {
+    "declaration": false,
+    "target": "es2017",
+    "declarationDir": "./typings",
+    "jsx": "react",
+    "jsxFactory": "h"
+  }
+}

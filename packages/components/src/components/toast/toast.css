@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+.toast {
+  position: absolute;
+  width: calc(100% - var(--m) * 4);
+  bottom: 0;
+  left: 0;
+  z-index: var(--toast-z-index);
+  padding: var(--s) var(--m);
+  margin: var(--s) var(--m);
+  background-color: var(--toast-background-color, var(--surface-color));
+  color: var(--toast-color, var(--on-surface-color));
+  border-radius: var(--toast-border-radius, var(--border-radius));
+}
+
+.info {
+  --toast-color: var(--info-color);
+  --toast-background-color: var(--info-color);
+}
+
+.success {
+  --toast-color: var(--success-color);
+  --toast-background-color: var(--success-color);
+}
+
+.error {
+  --toast-color: var(--on-error-color);
+  --toast-background-color: var(--error-color);
+}

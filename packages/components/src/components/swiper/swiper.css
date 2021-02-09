@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.swiper {
+  display: flex;
+  position: absolute;
+  top: var(--swiper-top, var(--m));
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  padding: var(--s) 0;
+  padding-bottom: 0;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  animation: rotate 1s infinite;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.content {
+  opacity: 1;
+}
+
+.veil {
+  opacity: 0.5;
+}
+
+::slotted(*) {
+  height: 100%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

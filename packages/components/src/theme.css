@@ -1,0 +1,9 @@
+:root {
+  --unit: 0.25rem;
+  --xs: calc(var(--unit) * 1);
+  --s: calc(var(--unit) * 1.5);
+  --m: calc(var(--unit) * 3);
+  --b: calc(var(--unit) * 4);
+  --l: calc(var(--unit) * 5);
+  --xl: calc(var(--unit) * 6);
+}

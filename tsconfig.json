@@ -1,0 +1,4 @@
+{
+  "files": [],
+  "references": [{ "path": "packages/components" }, { "path": "packages/utils" }, { "path": "packages/arch" }]
+}
