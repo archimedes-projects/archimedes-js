@@ -10,6 +10,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.16.0
+          scope: '@archimedes'
       - uses: actions/cache@v2
         with:
           path: ~/.npm
@@ -20,12 +21,7 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
-      - name: login
-        run: |
-          echo "@archimedes:registry=http://registry.npmjs.org/" >> .npmrc
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
       - name: publish
         run: npm run publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
