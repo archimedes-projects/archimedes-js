@@ -9,7 +9,6 @@
     "format": "prettier --write --ignore-path .gitignore .",
     "publish": "lerna publish from-git --yes",
     "version": "lerna version --exact",
-    "lerna": "lerna",
     "postinstall": "lerna bootstrap",
     "prepare": "husky install"
   },
