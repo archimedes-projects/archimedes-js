@@ -9,8 +9,5 @@
     "version": {
       "conventionalCommits": true
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
