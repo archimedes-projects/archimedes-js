@@ -1,5 +1,5 @@
 import { NotificationCenter } from './notification-center'
-import { Publisher } from '@archimedes/utils'
+import { Subject } from '@archimedes/utils'
 
 describe('NotificationCenter', () => {
   it('should create a notification', () => {
@@ -14,26 +14,26 @@ describe('NotificationCenter', () => {
   it('should register a subscriber', () => {
     const notificationCenter = new NotificationCenter()
 
-    notificationCenter.register({ update(_publisher: Publisher) {} })
+    notificationCenter.register({ update(_subject: Subject) {} })
 
-    expect(notificationCenter.subscribers).toHaveLength(1)
+    expect(notificationCenter.observers).toHaveLength(1)
   })
 
   it('should unregister a subscriber', () => {
     const notificationCenter = new NotificationCenter()
-    const subscriber = { update(_publisher: Publisher) {} }
+    const subscriber = { update(_subject: Subject) {} }
     notificationCenter.register(subscriber)
 
     notificationCenter.unregister(subscriber)
 
-    expect(notificationCenter.subscribers).toHaveLength(0)
+    expect(notificationCenter.observers).toHaveLength(0)
   })
 
   it('should publish', () => {
     const notificationCenter = new NotificationCenter()
     let count = 0
     const subscriber = {
-      update(_publisher: Publisher) {
+      update(_subject: Subject) {
         count++
       }
     }

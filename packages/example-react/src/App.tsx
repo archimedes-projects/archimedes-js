@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import { useDi } from './use-di'
 import { FooCmd } from './foo-cmd'

@@ -1,11 +1,12 @@
 import { HttpError } from './http-error'
+import { HttpParams } from './http-params'
 
 type Url = string
 
 type BeforeHook = (request: Request, options: Options) => void
 type AfterHook = (response: any, options: Options) => void
 
-type Options = {
+export type Options = {
   baseUrl: Url
   hooks: { before: BeforeHook[]; after: AfterHook[] }
 } & RequestInit
@@ -16,15 +17,19 @@ const defaultOptions = {
 }
 
 export class HttpClient {
-  static create(options: Options = defaultOptions) {
-    return new HttpClient(options)
+  static create({
+    baseUrl = defaultOptions.baseUrl,
+    hooks = { ...defaultOptions.hooks },
+    ...rest
+  }: Partial<Options> = defaultOptions) {
+    return new HttpClient({ baseUrl, hooks, ...rest })
   }
 
   private constructor(private readonly options: Options) {}
 
   // TODO handle query params
-  async get<Result>(url: Url) {
-    const request = new Request(this.getUrl(url))
+  async get<Result>(url: Url, httpParams?: HttpParams) {
+    const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await window.fetch(request)
@@ -33,8 +38,8 @@ export class HttpClient {
     return this.getResponse<Result>(response)
   }
 
-  async post<Result, Body>(url: string, body: Body): Promise<Result> {
-    const request = new Request(this.getUrl(url))
+  async post<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<Result> {
+    const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await window.fetch(request, { method: 'POST', body: this.getParsedBody(body) })
@@ -43,8 +48,8 @@ export class HttpClient {
     return this.getResponse(response)
   }
 
-  async put<Result, Body>(url: string, body: Body): Promise<Result> {
-    const request = new Request(this.getUrl(url))
+  async put<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<Result> {
+    const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await window.fetch(request, { method: 'PUT', body: this.getParsedBody(body) })
@@ -53,8 +58,8 @@ export class HttpClient {
     return this.getResponse(response)
   }
 
-  async delete<Result>(url: string): Promise<Result> {
-    const request = new Request(this.getUrl(url))
+  async delete<Result>(url: string, httpParams?: HttpParams): Promise<Result> {
+    const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await window.fetch(request, { method: 'DELETE' })
@@ -63,8 +68,13 @@ export class HttpClient {
     return this.getResponse(response)
   }
 
-  private getUrl(url: Url) {
-    return `${this.options.baseUrl}/${url}`
+  private getUrl(url: Url, params?: HttpParams) {
+    let fullUrl = `${this.options.baseUrl}/${url}`
+
+    if (params !== undefined) {
+      fullUrl += `?${params.toString()}`
+    }
+    return new URL(fullUrl).toString()
   }
 
   private getParsedBody<Body>(body: Body) {

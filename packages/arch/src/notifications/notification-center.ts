@@ -1,8 +1,8 @@
-import { Publisher, Subscriber } from '@archimedes/utils'
+import { Subject, Observer } from '@archimedes/utils'
 import { Notification } from './notification'
 
-export class NotificationCenter implements Publisher {
-  subscribers: Subscriber[] = []
+export class NotificationCenter implements Subject {
+  observers: Observer[] = []
   notifications: Notification[] = []
 
   new(notification: Notification) {
@@ -15,14 +15,14 @@ export class NotificationCenter implements Publisher {
   }
 
   publish() {
-    this.subscribers.forEach(x => x.update(this))
+    this.observers.forEach(x => x.update(this))
   }
 
-  register(subscriber: Subscriber) {
-    this.subscribers.push(subscriber)
+  register(observer: Observer) {
+    this.observers.push(observer)
   }
 
-  unregister(subscriber: Subscriber) {
-    this.subscribers = this.subscribers.filter(x => x !== subscriber)
+  unregister(observer: Observer) {
+    this.observers = this.observers.filter(x => x !== observer)
   }
 }

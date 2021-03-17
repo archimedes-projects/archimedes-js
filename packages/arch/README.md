@@ -56,9 +56,9 @@ This link is meant to capture errors occurred when executing a use case. This li
 
 ```ts
 import { NotificationCenter } from './notification-center'
-import { Subscriber } from './subscriber'
+import { Observer } from './subscriber'
 
-class ErrorAlerter implements Subscriber {
+class ErrorAlerter implements Observer {
     update(publisher: NotificationCenter) {
         publisher.notifications.map(x => ({
             ...x,

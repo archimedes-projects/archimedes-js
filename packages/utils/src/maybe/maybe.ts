@@ -1,23 +1,22 @@
 import { CallbackFunction } from './callback-function'
-import { MaybeProvidedValueIsEmptyError } from './maybe-provided-value-is-empty-error'
 import { MaybeEmptyError } from './maybe-empty-error'
 
 export class Maybe<T> {
   private constructor(private value: T | null) {}
 
-  static some<T>(value: T): Maybe<T> {
-    if (!this.isValid(value)) {
-      throw new MaybeProvidedValueIsEmptyError()
-    }
-    return new Maybe(value)
-  }
-
   static none<T>(): Maybe<T> {
     return new Maybe<T>(null)
   }
 
-  static fromValue<T>(value: T | undefined | null): Maybe<T> {
+  static from<T>(value: T | undefined | null): Maybe<T> {
     return this.isValid(value) ? Maybe.some(value as T) : Maybe.none<T>()
+  }
+
+  private static some<T>(value: T): Maybe<T> {
+    if (!this.isValid(value)) {
+      throw new MaybeEmptyError()
+    }
+    return new Maybe(value)
   }
 
   private static isValid(value: unknown | null | undefined | Maybe<unknown>): boolean {
@@ -65,7 +64,7 @@ export class Maybe<T> {
       f(this.value)
     }
 
-    return Maybe.fromValue(this.value)
+    return Maybe.from(this.value)
   }
 
   flatMap<R>(f: (wrapped: T) => Maybe<R>): Maybe<R> {

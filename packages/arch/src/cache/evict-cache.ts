@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { Class } from './class'
+import { Class } from '@archimedes/utils'
 import { UseCase } from '../use-case/use-case'
 import { CacheInvalidations } from '../runner/cache-invalidations'
 
