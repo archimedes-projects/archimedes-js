@@ -14,8 +14,17 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: npm install
-      - run: npm test
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+      - run: npm ci
+      - run: npm run build
+      - name: login
+        run: |
+          echo "@archimedes:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whomai
+          npm run build
+          npm run publish
+      - name: publish
+        run: "npm run lerna publish --yes --canary --message 'chore: release new versions'"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
