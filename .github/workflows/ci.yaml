@@ -19,4 +19,4 @@ jobs:
       - name: bootstrap
         run: npm run bootstrap
       - name: test
-        run: npm test:ci
+        run: npm run test:ci
