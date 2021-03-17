@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppComponent } from './app.component'
 import { FooCmd } from './foo-cmd'
 import { BarQry } from './bar-qry'
-import { Runner, CacheInvalidations, CacheLink, CacheManager, ExecutorLink, LoggerLink } from '@archimedes/arch'
+import { Runner, CacheInvalidations, CacheLink, CacheManager, ExecutorLink, LoggerLink, Logger } from '@archimedes/arch'
 import { QuxCmd } from './qux-cmd'
 import { BazQry } from './baz-qry'
 
@@ -11,7 +11,7 @@ import { BazQry } from './baz-qry'
   declarations: [AppComponent],
   imports: [BrowserModule],
   providers: [
-    { provide: LoggerLink, useClass: LoggerLink },
+    { provide: LoggerLink, useFactory: () => new LoggerLink(console) },
     { provide: ExecutorLink, useClass: ExecutorLink },
     { provide: CacheManager, useClass: CacheManager },
     { provide: CacheLink, useClass: CacheLink, deps: [CacheManager] }

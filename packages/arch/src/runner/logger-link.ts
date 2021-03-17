@@ -1,6 +1,7 @@
 import { BaseLink } from './base-link'
 import { Context } from './context'
 import { Logger } from './logger'
+import { Datetime } from '@archimedes/utils'
 
 export class LoggerLink extends BaseLink {
   constructor(private readonly logger: Logger) {
@@ -10,9 +11,9 @@ export class LoggerLink extends BaseLink {
   next(context: Context): void {
     context.result = context.result?.then(x => {
       this.logger.log(
-        `[${context.useCase.constructor.name}] - ${
-          context.param !== undefined ? JSON.stringify(context.param, null, 2) : '-'
-        } - ${x}`
+        `[${Datetime.now().toIso()}] ${context.useCase.constructor.name} / Params: ${
+          context.param !== undefined ? JSON.stringify(context.param, null, 2) : ''
+        } - Result: ${x}`
       )
       return x
     })

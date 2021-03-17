@@ -12,7 +12,7 @@ import { BarQry } from './bar-qry'
 CacheInvalidations.set(FooCmd.name, [BarQry.name])
 CacheInvalidations.set(QuxCmd.name, [BazQry.name])
 
-Runner.createChain([new CacheLink(new CacheManager()), new ExecutorLink(), new LoggerLink()])
+Runner.createChain([new CacheLink(new CacheManager()), new ExecutorLink(), new LoggerLink(console)])
 
 ReactDOM.render(
   <React.StrictMode>
