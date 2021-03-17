@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
-    "publish": "lerna publish from-git --yes",
+    "publish": "lerna publish --canary --yes --message 'chore: release new versions'",
     "version": "lerna version --exact",
     "postinstall": "lerna bootstrap",
     "prepare": "husky install"

@@ -26,6 +26,6 @@ jobs:
           echo "registry=http://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
       - name: publish
-        run: "lerna publish --canary --yes --message 'chore: release new versions'"
+        run: npm run publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
