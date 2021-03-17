@@ -22,7 +22,7 @@ jobs:
           echo "@archimedes:registry=http://registry.npmjs.org/" > .npmrc
           echo "registry=http://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whomai
+          npm whoami
           npm run build
           npm run publish
       - name: publish
