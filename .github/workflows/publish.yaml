@@ -23,7 +23,7 @@ jobs:
         run: npm run build
       - name: publish
         run: |
-          cat .npmrc
+          cat ~/.npmrc
           npm whoami
           npm run publish
         env:
