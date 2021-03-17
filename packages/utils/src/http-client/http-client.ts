@@ -27,7 +27,6 @@ export class HttpClient {
 
   private constructor(private readonly options: Options) {}
 
-  // TODO handle query params
   async get<Result>(url: Url, httpParams?: HttpParams) {
     const request = new Request(this.getUrl(url, httpParams))
 
@@ -69,7 +68,7 @@ export class HttpClient {
   }
 
   private getUrl(url: Url, params?: HttpParams) {
-    let fullUrl = `${this.options.baseUrl}/${url}`
+    let fullUrl = this.options.baseUrl === '' ? url : this.options.baseUrl + '/' + url
 
     if (params !== undefined) {
       fullUrl += `?${params.toString()}`
