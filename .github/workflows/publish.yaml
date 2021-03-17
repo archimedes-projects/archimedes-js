@@ -11,6 +11,7 @@ jobs:
         with:
           node-version: 14.16.0
           always-auth: true
+          registry-url: https://registry.npmjs.org/
           scope: '@archimedes'
       - uses: actions/cache@v2
         with:
