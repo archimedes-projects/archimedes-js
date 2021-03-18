@@ -8,7 +8,6 @@
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
     "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'",
-    "version": "lerna version --exact",
     "postinstall": "lerna bootstrap",
     "prepare": "husky install"
   },
