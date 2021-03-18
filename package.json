@@ -13,7 +13,8 @@
     "format": "prettier --write --ignore-path .gitignore .",
     "version": "lerna version --conventional-commits",
     "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "husky install"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
