@@ -14,7 +14,7 @@
     "version": "lerna version --conventional-commits",
     "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'",
     "prepare": "husky install",
-    "postinstall": "husky install"
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
