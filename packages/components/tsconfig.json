@@ -7,6 +7,7 @@
     "target": "es2017",
     "declarationDir": "./typings",
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "typeRoots": ["./node_modules/@types"]
   }
 }

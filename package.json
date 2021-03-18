@@ -7,13 +7,12 @@
     "examples/*"
   ],
   "scripts": {
-    "build": "lerna run build --stream",
+    "build": "lerna run build --stream --no-private",
     "test": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
     "version": "lerna version --conventional-commits",
     "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'",
-    "postinstall": "lerna bootstrap",
     "prepare": "husky install"
   },
   "devDependencies": {
