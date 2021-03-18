@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@archimedes/arch": "0.0.0",
+    "@archimedes/arch": "./../../packages/arch",
     "@angular/animations": "~11.1.0",
     "@angular/common": "~11.1.0",
     "@angular/compiler": "~11.1.0",
