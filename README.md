@@ -1,5 +1,9 @@
 # archimedes
 
+Archimedes is a series of architectural concepts that are implemented in different languages. Using a given Archimedes implementation provides a set of solid and flexible architectural pieces. This is the implementation of Archimedes in TypeScript.
+
+[Checkout the documentation](https://www.archimedesfw.io/).
+
 ## Usage
 
 Install any `archimedes` packages:
