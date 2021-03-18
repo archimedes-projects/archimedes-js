@@ -28,15 +28,10 @@
     "isomorphic-fetch": "3.0.0",
     "jest": "26.6.3",
     "lerna": "4.0.0",
-    "lint-staged": "10.5.4",
     "prettier": "2.2.1",
+    "pretty-quick": "3.1.0",
     "ts-jest": "26.5.3",
     "ts-mockito": "2.6.1",
     "typescript": "4.2.3"
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx,jsx,html,json,css,scss,md,yaml}": [
-      "npm run format"
-    ]
   }
 }
