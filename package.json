@@ -2,11 +2,16 @@
   "name": "archimedes",
   "private": true,
   "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "scripts": {
     "build": "lerna run build --stream",
     "test": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
+    "version": "lerna version --conventional-commits",
     "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'",
     "postinstall": "lerna bootstrap",
     "prepare": "husky install"

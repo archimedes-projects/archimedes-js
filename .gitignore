@@ -11,6 +11,14 @@ loader/
 tsconfig.tsbuildinfo
 components.d.ts
 
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 .idea/
 .gradle/
 .sourcemaps/
