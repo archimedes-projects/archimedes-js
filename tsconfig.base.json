@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "baseUrl": "src",
-    "typeRoots": ["./node_modules/@types"],
+    "skipLibCheck": true,
     "paths": {
       "@archimedes/*": ["./*/src"]
     }
