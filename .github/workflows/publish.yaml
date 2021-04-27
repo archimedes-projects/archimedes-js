@@ -9,24 +9,24 @@ jobs:
           fetch-depth: '0'
       - uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 16.0.0
           always-auth: true
           registry-url: 'https://registry.npmjs.org'
           scope: '@archimedes'
       - uses: actions/cache@v2
         with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Install
-        run: yarn
+        run: npm ci
       - name: Build
-        run: yarn run build
+        run: npm run build
       - name: Version
-        run: yarn run version
+        run: npm run version
       - name: Publish
-        run: yarn run publish
+        run: npm run publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

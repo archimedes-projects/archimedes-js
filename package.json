@@ -33,8 +33,8 @@
     "typescript": "4.2.4"
   },
   "simple-git-hooks": {
-    "commit-msg": "yarn commitlint --edit",
-    "pre-commit": "yarn pretty-quick --staged",
-    "pre-push": "yarn test:ci"
+    "commit-msg": "npx --no-install commitlint --edit",
+    "pre-commit": "npx pretty-quick --staged",
+    "pre-push": "npm run test:ci"
   }
 }
