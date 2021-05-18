@@ -3,7 +3,8 @@
   "private": true,
   "license": "Apache-2.0",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "scripts": {
     "build": "npm run build:components && npm run build:packages",
@@ -13,7 +14,8 @@
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
     "version": "lerna version --conventional-commits",
-    "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'"
+    "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'",
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "@babel/core": "7.14.3",
