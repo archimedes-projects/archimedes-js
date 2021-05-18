@@ -4,11 +4,11 @@
   "description": "Archimedes architecture",
   "author": "<>",
   "license": "Apache-2.0",
-  "main": "lib/index.js",
-  "module": "lib/index.esm.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "devDependencies": {
     "typescript": "4.2.4"

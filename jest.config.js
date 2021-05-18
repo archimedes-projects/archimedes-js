@@ -6,7 +6,7 @@ module.exports = {
   restoreMocks: true,
   coverageDirectory: 'coverage',
   setupFiles: ['./tests/setup.js'],
-  modulePathIgnorePatterns: ['lib'],
+  modulePathIgnorePatterns: ['dist'],
   roots: ['<rootDir>/packages'],
   testEnvironment: 'jsdom',
   coverageReporters: ['text-summary', 'lcov'],
