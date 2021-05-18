@@ -7,7 +7,7 @@
     "examples/*"
   ],
   "scripts": {
-    "build": "npm run build:components && npm run build:packages",
+    "build": "yarn build:components && yarn build:packages",
     "build:components": "lerna exec --scope @archimedes/components -- npm run build",
     "build:packages": "lerna exec --ignore @archimedes/components -- bili --config ../../bili.config.ts",
     "test": "jest --coverage",
@@ -15,7 +15,8 @@
     "format": "prettier --write --ignore-path .gitignore .",
     "version": "lerna version --conventional-commits",
     "publish": "lerna publish --canary --yes --no-verify-access --message 'chore: release new versions'",
-    "postinstall": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap --force-local",
+    "postinstall": "yarn run bootstrap"
   },
   "devDependencies": {
     "@babel/core": "7.14.3",
