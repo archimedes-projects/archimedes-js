@@ -9,7 +9,7 @@
   "scripts": {
     "build": "yarn build:components && yarn build:packages",
     "build:components": "lerna exec --scope @archimedes/components -- npm run build",
-    "build:packages": "lerna exec --ignore @archimedes/components -- bili --config ../../bili.config.ts",
+    "build:packages": "lerna exec --scope @archimedes/arch --scope @archimedes/utils -- bili --config ../../bili.config.ts",
     "test": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",

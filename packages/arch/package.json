@@ -4,8 +4,8 @@
   "description": "Archimedes architecture",
   "author": "<>",
   "license": "Apache-2.0",
-  "module": "lib/index.js",
   "main": "lib/index.js",
+  "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
