@@ -7,12 +7,5 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
--   check deployment process ([4e61334](https://github.com/archimedes-projects/archidemes-js/commit/4e6133424e962a87167b87dd4e613ee1df93318a))
 -   use bili and yarn to build ([0fdbccc](https://github.com/archimedes-projects/archidemes-js/commit/0fdbcccff1bb1704a1579531c798a1d398218a50))
--   **arch:** add base url ([f2a2f0b](https://github.com/archimedes-projects/archidemes-js/commit/f2a2f0b55e0d56b498b93f411d203060ade9dfe9))
-
-# (2021-03-18)
-
-### Features
-
 -   **arch:** add base url ([f2a2f0b](https://github.com/archimedes-projects/archidemes-js/commit/f2a2f0b55e0d56b498b93f411d203060ade9dfe9))
