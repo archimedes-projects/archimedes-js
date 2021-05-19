@@ -14,8 +14,8 @@
     "test": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
-    "version": "lerna version --conventional-commits --no-private --yes --no-push --exact",
-    "publish": "lerna publish --canary --yes --no-verify-access --message 'chore(release): release version %s'",
+    "version": "lerna version --conventional-commits --no-private --yes --exact",
+    "publish": "lerna publish --from-git --canary --yes --no-verify-access --message 'chore(release): release version %s'",
     "bootstrap": "lerna bootstrap",
     "postinstall": "yarn run bootstrap"
   },
