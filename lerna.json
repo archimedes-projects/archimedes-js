@@ -6,9 +6,6 @@
   "command": {
     "publish": {
       "conventionalCommits": true
-    },
-    "version": {
-      "conventionalCommits": true
     }
   }
 }
