@@ -30,6 +30,8 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn run build
+      - name: Version
+        run: yarn run version
       - name: Publish
         run: yarn run publish
         env:
