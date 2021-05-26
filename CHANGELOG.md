@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/archimedes-projects/archidemes-js/compare/v0.1.2...v1.0.0) (2021-05-26)
+
+-   chore!: release version 1.0 ([6bbee1f](https://github.com/archimedes-projects/archidemes-js/commit/6bbee1f937ed51db6cab14eaa317dd203e2e064f))
+
+### BREAKING CHANGES
+
+-   release new version
+
 ## [0.1.2](https://github.com/archimedes-projects/archidemes-js/compare/v0.1.1...v0.1.2) (2021-05-24)
 
 ### Bug Fixes
