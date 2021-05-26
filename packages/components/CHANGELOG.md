@@ -5,6 +5,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.0.0](https://github.com/archimedes-projects/archidemes-js/compare/v0.1.2...v1.0.0) (2021-05-26)
 
+-   chore!: release version 1.0 ([2e189e4](https://github.com/archimedes-projects/archidemes-js/commit/2e189e4f24c216edb0cf1706003242d115bc0e64))
+
+### BREAKING CHANGES
+
+-   release new version
+
+# [1.0.0](https://github.com/archimedes-projects/archidemes-js/compare/v0.1.2...v1.0.0) (2021-05-26)
+
 **Note:** Version bump only for package @archimedes/components
 
 ## [0.1.1](https://github.com/archimedes-projects/archidemes-js/compare/v0.1.0...v0.1.1) (2021-05-19)
