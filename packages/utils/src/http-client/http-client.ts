@@ -31,7 +31,7 @@ export class HttpClient {
     const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await window.fetch(request)
+    const response = await fetch(request)
     this.options.hooks.after.forEach(hook => hook(response, this.options))
 
     return this.getResponse<Result>(response)
@@ -41,7 +41,7 @@ export class HttpClient {
     const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await window.fetch(request, { method: 'POST', body: this.getParsedBody(body) })
+    const response = await fetch(request, { method: 'POST', body: this.getParsedBody(body) })
     this.options.hooks.after.forEach(hook => hook(response, this.options))
 
     return this.getResponse(response)
@@ -51,7 +51,7 @@ export class HttpClient {
     const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await window.fetch(request, { method: 'PUT', body: this.getParsedBody(body) })
+    const response = await fetch(request, { method: 'PUT', body: this.getParsedBody(body) })
     this.options.hooks.after.forEach(hook => hook(response, this.options))
 
     return this.getResponse(response)
@@ -61,7 +61,7 @@ export class HttpClient {
     const request = new Request(this.getUrl(url, httpParams))
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await window.fetch(request, { method: 'DELETE' })
+    const response = await fetch(request, { method: 'DELETE' })
     this.options.hooks.after.forEach(hook => hook(response, this.options))
 
     return this.getResponse(response)
