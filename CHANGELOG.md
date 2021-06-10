@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.0.1...v1.1.0) (2021-06-10)
+
+### Features
+
+-   add default headers ([1ea6510](https://github.com/archimedes-projects/archidemes-js/commit/1ea651087c8259cbc889b4b6e54d97881d854cfd))
+-   create range function ([0c980b2](https://github.com/archimedes-projects/archidemes-js/commit/0c980b29b22b3165c148aaaa6a2bff031f2abc4d))
+
 ## [1.0.1](https://github.com/archimedes-projects/archidemes-js/compare/v1.0.0...v1.0.1) (2021-06-01)
 
 ### Bug Fixes
