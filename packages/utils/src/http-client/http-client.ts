@@ -17,6 +17,11 @@ const defaultOptions = {
 }
 
 export class HttpClient {
+  defaultHeaders = new Headers({
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  })
+
   static create({
     baseUrl = defaultOptions.baseUrl,
     hooks = { ...defaultOptions.hooks },
@@ -28,7 +33,7 @@ export class HttpClient {
   private constructor(private readonly options: Options) {}
 
   async get<Result>(url: Url, httpParams?: HttpParams) {
-    const request = new Request(this.getUrl(url, httpParams))
+    const request = this.getRequest(url, httpParams)
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await fetch(request)
@@ -38,7 +43,7 @@ export class HttpClient {
   }
 
   async post<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<Result> {
-    const request = new Request(this.getUrl(url, httpParams))
+    const request = this.getRequest(url, httpParams)
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await fetch(request, { method: 'POST', body: this.getParsedBody(body) })
@@ -48,7 +53,7 @@ export class HttpClient {
   }
 
   async put<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<Result> {
-    const request = new Request(this.getUrl(url, httpParams))
+    const request = this.getRequest(url, httpParams)
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await fetch(request, { method: 'PUT', body: this.getParsedBody(body) })
@@ -58,13 +63,17 @@ export class HttpClient {
   }
 
   async delete<Result>(url: string, httpParams?: HttpParams): Promise<Result> {
-    const request = new Request(this.getUrl(url, httpParams))
+    const request = this.getRequest(url, httpParams)
 
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await fetch(request, { method: 'DELETE' })
     this.options.hooks.after.forEach(hook => hook(response, this.options))
 
     return this.getResponse(response)
+  }
+
+  private getRequest(url: string, httpParams: HttpParams | undefined) {
+    return new Request(this.getUrl(url, httpParams), { headers: this.defaultHeaders })
   }
 
   private getUrl(url: Url, params?: HttpParams) {
@@ -82,7 +91,7 @@ export class HttpClient {
 
   private async getResponse<Result>(response: Response) {
     if (!response.ok) {
-      throw new HttpError()
+      throw new HttpError({ name: response.status.toString(), message: response.statusText })
     }
     const json = await response.json()
     return json as Result

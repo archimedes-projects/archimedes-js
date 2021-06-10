@@ -6,7 +6,14 @@ describe('HttpClient', () => {
 
     await httpClient.get('bar')
 
-    expect(window.fetch).toHaveBeenCalledWith(new Request('http://foo/bar'))
+    expect(window.fetch).toHaveBeenCalledWith(
+      new Request('http://foo/bar', {
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        })
+      })
+    )
   })
 
   it('should make a get request', async () => {
@@ -14,7 +21,14 @@ describe('HttpClient', () => {
 
     await httpClient.get('http://foo')
 
-    expect(window.fetch).toHaveBeenCalledWith(new Request('http://foo'))
+    expect(window.fetch).toHaveBeenCalledWith(
+      new Request('http://foo', {
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        })
+      })
+    )
   })
 
   it('should make a post request', async () => {
@@ -22,7 +36,15 @@ describe('HttpClient', () => {
 
     await httpClient.post('http://foo', { bar: 'baz' })
 
-    expect(window.fetch).toHaveBeenCalledWith(new Request('http://foo'), { body: '{"bar":"baz"}', method: 'POST' })
+    expect(window.fetch).toHaveBeenCalledWith(
+      new Request('http://foo', {
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        })
+      }),
+      { body: '{"bar":"baz"}', method: 'POST' }
+    )
   })
 
   it('should make a put request', async () => {
@@ -30,7 +52,15 @@ describe('HttpClient', () => {
 
     await httpClient.put('http://foo', { bar: 'baz' })
 
-    expect(window.fetch).toHaveBeenCalledWith(new Request('http://foo'), { body: '{"bar":"baz"}', method: 'PUT' })
+    expect(window.fetch).toHaveBeenCalledWith(
+      new Request('http://foo', {
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        })
+      }),
+      { body: '{"bar":"baz"}', method: 'PUT' }
+    )
   })
 
   it('should make a delete request', async () => {
@@ -38,7 +68,15 @@ describe('HttpClient', () => {
 
     await httpClient.delete('http://foo')
 
-    expect(window.fetch).toHaveBeenCalledWith(new Request('http://foo'), { method: 'DELETE' })
+    expect(window.fetch).toHaveBeenCalledWith(
+      new Request('http://foo', {
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        })
+      }),
+      { method: 'DELETE' }
+    )
   })
 })
 
