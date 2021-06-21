@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/archimedes-projects/archidemes-js/compare/v1.1.0...v1.1.1) (2021-06-21)
+
+### Bug Fixes
+
+-   don't cache commands ([67eeb84](https://github.com/archimedes-projects/archidemes-js/commit/67eeb84a89f57dc89a019ef7327fa6d7d5eef950))
+
 # [1.1.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.0.1...v1.1.0) (2021-06-10)
 
 **Note:** Version bump only for package @archimedes/arch
