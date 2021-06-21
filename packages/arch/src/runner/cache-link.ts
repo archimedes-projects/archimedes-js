@@ -17,7 +17,9 @@ export class CacheLink extends BaseLink {
       this.nextLink.next(context)
     }
 
-    context.result = this.cacheManager.cache(name, () => context.result, context.param)
+    context.result = context.useCase.readonly
+      ? this.cacheManager.cache(name, () => context.result, context.param)
+      : context.result
 
     this.invalidateCache(name)
   }

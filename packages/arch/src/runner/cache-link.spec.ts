@@ -6,6 +6,7 @@ import { UseCase } from '../use-case/use-case'
 import { Link } from './link'
 import { CacheInvalidations } from './cache-invalidations'
 import { InvalidationPolicy } from '../cache/invalidation-policy'
+import { Command } from '../use-case/command'
 
 describe('CacheLink', () => {
   it('should use the cache', () => {
@@ -44,6 +45,24 @@ describe('CacheLink', () => {
     cacheLink.next(context)
 
     verify(link.next(anything())).never()
+  })
+
+  it('should not cache commands', () => {
+    const { link, cacheManager, cacheLink } = setup()
+    when(cacheManager.isCached(anything(), anything())).thenReturn(false)
+    class MockUseCase extends Command {
+      async internalExecute(): Promise<void> {}
+    }
+    const context = Context.create({
+      useCase: new MockUseCase(),
+      param: undefined,
+      executionOptions: { inlineError: false }
+    })
+    cacheLink.setNext(instance(link))
+
+    cacheLink.next(context)
+
+    verify(cacheManager.cache(anything(), anything())).never()
   })
 
   it('should invalidate using no cache policy', () => {
