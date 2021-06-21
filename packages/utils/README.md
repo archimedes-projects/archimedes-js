@@ -3,6 +3,11 @@
 Different utilities to use:
 
 -   Maybe
+-   HttpClient
+-   Datetime
+-   ExtendedError
+-   IsPromise
+-   Observer
 
 ## Usage
 
