@@ -37,9 +37,3 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Changelog
-        uses: TriPSs/conventional-changelog-action@v3
-        with:
-          git-user-name: archimedes-ci
-          git-user-email: ci.archimedes.io@autentia.com
-          github-token: ${{ secrets.GITHUB_TOKEN }}
