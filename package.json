@@ -15,7 +15,7 @@
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
     "version": "lerna version --conventional-commits --no-private --yes --exact",
-    "publish": "lerna publish from-git --yes --no-verify-access",
+    "publish": "lerna publish from-package --yes --no-verify-access",
     "bootstrap": "lerna bootstrap",
     "postinstall": "yarn run bootstrap"
   },
