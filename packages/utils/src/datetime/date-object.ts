@@ -1,3 +1,3 @@
-import { TimeUnits } from './time-units'
+import { TimeUnit } from './time-unit'
 
-export type DateObject = Partial<Record<TimeUnits, number>>
+export type DateObject = Partial<Record<TimeUnit, number>>

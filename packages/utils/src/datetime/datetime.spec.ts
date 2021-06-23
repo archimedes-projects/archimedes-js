@@ -104,6 +104,15 @@ describe('Datetime', () => {
     expect(actual).toBe('2019-07-19T01:02:03Z')
   })
 
+  it('should get the difference between two dates', () => {
+    const datetimeA = Datetime.fromIsoString('2020-08-22T01:02:03Z')
+    const datetimeB = Datetime.fromIsoString('2020-08-21T01:02:03Z')
+
+    const actual = datetimeA.difference(datetimeB).as('days')
+
+    expect(actual).toBe(1)
+  })
+
   it("should return today's date", () => {
     const datetime = Datetime.now()
 

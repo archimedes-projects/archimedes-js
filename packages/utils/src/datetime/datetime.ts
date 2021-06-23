@@ -155,6 +155,11 @@ export class Datetime {
     )
   }
 
+  difference(datetime: Datetime): Duration {
+    const iso8601 = this._value.diff(datetime._value).toISO()
+    return Duration.fromIso(iso8601)
+  }
+
   toIso() {
     const date = [this._value.year, this._value.month, this._value.day].map(this.addPadStart)
     const time = [this._value.hour, this._value.minute, this._value.second].map(this.addPadStart)

@@ -1,1 +1,1 @@
-export type TimeUnits = 'year' | 'month' | 'day' | 'hour' | 'minute' | 'second' | 'millisecond'
+export type TimeUnits = 'years' | 'months' | 'days' | 'hours' | 'minutes' | 'seconds' | 'milliseconds'
