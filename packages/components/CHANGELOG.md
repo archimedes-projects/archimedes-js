@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.1.3...v1.2.0) (2021-06-23)
+
+**Note:** Version bump only for package @archimedes/components
+
 # [1.1.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.0.1...v1.1.0) (2021-06-10)
 
 **Note:** Version bump only for package @archimedes/components
