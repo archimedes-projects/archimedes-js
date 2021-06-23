@@ -24,4 +24,31 @@ describe('Duration', () => {
 
     expect(actual).toBe(false)
   })
+
+  test.each`
+    a            | b         | expected
+    ${'seconds'} | ${'PT1H'} | ${3600}
+    ${'minutes'} | ${'PT1H'} | ${60}
+    ${'months'}  | ${'P1Y'}  | ${12}
+  `('should get the duration as $a', ({ a, b, expected }) => {
+    const duration = Duration.fromIso(b)
+
+    const actual = duration.as(a)
+
+    expect(actual).toBe(expected)
+  })
+
+  test.each`
+    a            | b               | expected
+    ${'seconds'} | ${'PT1S'}       | ${1}
+    ${'minutes'} | ${'PT5H12M59S'} | ${12}
+    ${'years'}   | ${'P42Y12M'}    | ${42}
+  `('should get $a from the duration ', ({ a, b, expected }) => {
+    const duration = Duration.fromIso(b)
+
+    // @ts-ignore
+    const actual = duration[a]
+
+    expect(actual).toBe(expected)
+  })
 })
