@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.1.3...v1.2.0) (2021-06-23)
+
+### Features
+
+-   add "as" method to duration to get a given duration in a time unit ([44d6786](https://github.com/archimedes-projects/archimedes-js/commit/44d67860caefc0c04f0f74b14ebedcbd2e9a202e))
+-   add difference method to get the difference between two dates ([a42dcc3](https://github.com/archimedes-projects/archimedes-js/commit/a42dcc3094e4d80f28aa445514b0c96fa52028c5))
+
 # [1.1.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.0.1...v1.1.0) (2021-06-10)
 
 ### Features
