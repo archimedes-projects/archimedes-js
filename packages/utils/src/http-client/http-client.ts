@@ -9,7 +9,8 @@ type AfterHook = (response: any, options: Options) => void
 export type Options = {
   baseUrl: Url
   hooks: { before: BeforeHook[]; after: AfterHook[] }
-} & RequestInit
+  defaults?: RequestInit
+}
 
 const defaultOptions = {
   baseUrl: '',
@@ -17,7 +18,7 @@ const defaultOptions = {
 }
 
 export class HttpClient {
-  defaultHeaders = new Headers({
+  private readonly defaultHeaders = new Headers({
     Accept: 'application/json',
     'Content-Type': 'application/json'
   })
@@ -25,50 +26,34 @@ export class HttpClient {
   static create({
     baseUrl = defaultOptions.baseUrl,
     hooks = { ...defaultOptions.hooks },
-    ...rest
+    defaults
   }: Partial<Options> = defaultOptions) {
-    return new HttpClient({ baseUrl, hooks, ...rest })
+    return new HttpClient({ baseUrl, hooks, defaults: defaults })
   }
 
   private constructor(private readonly options: Options) {}
 
-  async get<Result>(url: Url, httpParams?: HttpParams) {
-    const request = this.getRequest(url, httpParams)
-
-    this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await fetch(request)
-    this.options.hooks.after.forEach(hook => hook(response, this.options))
-
-    return this.getResponse<Result>(response)
+  async get<Result>(url: Url, httpParams?: HttpParams): Promise<Result> {
+    return this.sendRequest(url, { method: 'GET' }, httpParams)
   }
 
   async post<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<Result> {
-    const request = this.getRequest(url, httpParams)
-
-    this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await fetch(request, { method: 'POST', body: this.getParsedBody(body) })
-    this.options.hooks.after.forEach(hook => hook(response, this.options))
-
-    return this.getResponse(response)
+    return this.sendRequest(url, { method: 'POST', body: this.getParsedBody(body) }, httpParams)
   }
 
   async put<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<Result> {
-    const request = this.getRequest(url, httpParams)
-
-    this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await fetch(request, { method: 'PUT', body: this.getParsedBody(body) })
-    this.options.hooks.after.forEach(hook => hook(response, this.options))
-
-    return this.getResponse(response)
+    return this.sendRequest(url, { method: 'PUT', body: this.getParsedBody(body) }, httpParams)
   }
 
   async delete<Result>(url: string, httpParams?: HttpParams): Promise<Result> {
+    return this.sendRequest(url, { method: 'DELETE' }, httpParams)
+  }
+
+  private async sendRequest<Result>(url: string, options: RequestInit, httpParams?: HttpParams): Promise<Result> {
     const request = this.getRequest(url, httpParams)
-
     this.options.hooks.before.forEach(hook => hook(request, this.options))
-    const response = await fetch(request, { method: 'DELETE' })
+    const response = await fetch(request, { ...this.options.defaults, ...options })
     this.options.hooks.after.forEach(hook => hook(response, this.options))
-
     return this.getResponse(response)
   }
 

@@ -12,7 +12,10 @@ describe('HttpClient', () => {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         })
-      })
+      }),
+      {
+        method: 'GET'
+      }
     )
   })
 
@@ -27,7 +30,10 @@ describe('HttpClient', () => {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         })
-      })
+      }),
+      {
+        method: 'GET'
+      }
     )
   })
 
