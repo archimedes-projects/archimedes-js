@@ -5,7 +5,6 @@ import { Context } from './context'
 import { Link } from './link'
 import { UseCase } from '../use-case/use-case'
 
-// TODO: When ZoneJs updates this should work https://github.com/facebook/jest/issues/10064
 describe.skip('NotificationLink', () => {
   it('should create a new notification when there is an error', async () => {
     expect.assertions(1)
