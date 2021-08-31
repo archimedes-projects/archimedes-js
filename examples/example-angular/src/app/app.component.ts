@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { BarQry } from './bar-qry'
 import { FooCmd } from './foo-cmd'
 import { BazQry } from './baz-qry'
@@ -9,8 +9,10 @@ import { QuxCmd } from './qux-cmd'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   result?: number
+  calls = 0
+  id!: number
 
   constructor(
     private readonly fooCmd: FooCmd,
@@ -18,6 +20,14 @@ export class AppComponent {
     private readonly bazQry: BazQry,
     private readonly quxCmd: QuxCmd
   ) {}
+
+  ngOnInit() {
+    this.id = this.fooCmd.subscribe(() => this.calls++)
+  }
+
+  ngOnDestroy() {
+    this.fooCmd.unsubscribe(this.id)
+  }
 
   foo() {
     this.fooCmd.execute(1)
