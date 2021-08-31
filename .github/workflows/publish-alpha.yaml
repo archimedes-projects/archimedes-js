@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: yarn run build
       - name: Version
-        run: yarn run version -- --conventional-prerelease
+        run: yarn run version --conventional-prerelease
       - name: Publish
         run: yarn run publish
         env:

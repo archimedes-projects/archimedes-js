@@ -241,6 +241,24 @@
   dependencies:
     tslib "^2.0.0"
 
+"@archimedes/arch@*":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@archimedes/arch/-/arch-1.3.0.tgz#c515a9bfb7c2441837adf59da0189fc97ea5355f"
+  integrity sha512-bTplgpubzaHzQBaui83Pe1G+GYhnu1aXTCftFCWgUYZl/cAqnX+dkWPKPCpsNZR3zM+kuY9+LlJ9rQluMzNxhA==
+  dependencies:
+    "@archimedes/utils" "1.3.0"
+    reflect-metadata "0.1.13"
+    tiny-lru "7.0.6"
+    ts-md5 "1.2.7"
+
+"@archimedes/utils@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@archimedes/utils/-/utils-1.3.0.tgz#017abb79102ba104c819bcdb3a3dae00c166f097"
+  integrity sha512-5ISWegc5Palr7Z5whFPuQWn2e4gKWmr6gZm1mMw1Mu6U/xAXZtp6G2/F/Muk+JQVXpBU80u/+nBS3RRAYtPMKg==
+  dependencies:
+    "@types/luxon" "1.26.5"
+    luxon "1.26.0"
+
 "@babel/code-frame@7.10.4":
   version "7.10.4"
   resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.10.4.tgz"
