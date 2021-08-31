@@ -11,7 +11,7 @@
     "dist"
   ],
   "devDependencies": {
-    "typescript": "4.2.4"
+    "typescript": "4.4.2"
   },
   "dependencies": {
     "@types/luxon": "1.26.5",
