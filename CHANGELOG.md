@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.2.0...v1.3.0-alpha.0) (2021-08-31)
+
+### Features
+
+-   add use cases subscriptions ([ae47e26](https://github.com/archimedes-projects/archidemes-js/commit/ae47e260255950c7f3272bec4e65389b744eccb1))
+-   use request defaults ([901210e](https://github.com/archimedes-projects/archidemes-js/commit/901210e5fa3bf505c20da597302a90aec8daf02b))
+
 # [1.2.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.1.3...v1.2.0) (2021-06-23)
 
 ### Features
