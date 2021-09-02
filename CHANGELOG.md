@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.3.0-alpha.1](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-alpha.0...v1.3.0-alpha.1) (2021-09-01)
 
-
 ### Bug Fixes
 
-* export execution options ([0b46d3a](https://github.com/archimedes-projects/archimedes-js/commit/0b46d3abc573c1a94ce739a13816bffd7b84fb62))
-
-
-
-
+-   export execution options ([0b46d3a](https://github.com/archimedes-projects/archimedes-js/commit/0b46d3abc573c1a94ce739a13816bffd7b84fb62))
 
 # [1.3.0-alpha.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.2.0...v1.3.0-alpha.0) (2021-08-31)
 
@@ -20,6 +15,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 -   add use cases subscriptions ([ae47e26](https://github.com/archimedes-projects/archidemes-js/commit/ae47e260255950c7f3272bec4e65389b744eccb1))
 -   use request defaults ([901210e](https://github.com/archimedes-projects/archidemes-js/commit/901210e5fa3bf505c20da597302a90aec8daf02b))
+
+# [1.3.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.2.0...v1.3.0) (2021-07-09)
+
+### Features
+
+-   use request defaults ([901210e](https://github.com/archimedes-projects/archimedes-js/commit/901210e5fa3bf505c20da597302a90aec8daf02b))
 
 # [1.2.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.1.3...v1.2.0) (2021-06-23)
 

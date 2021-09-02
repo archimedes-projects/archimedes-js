@@ -7,6 +7,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @archimedes/components
 
+# [1.3.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.2.0...v1.3.0) (2021-07-09)
+
+**Note:** Version bump only for package @archimedes/components
+
 # [1.2.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.1.3...v1.2.0) (2021-06-23)
 
 **Note:** Version bump only for package @archimedes/components

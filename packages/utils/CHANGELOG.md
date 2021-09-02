@@ -9,6 +9,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 -   use request defaults ([901210e](https://github.com/archimedes-projects/archidemes-js/commit/901210e5fa3bf505c20da597302a90aec8daf02b))
 
+# [1.3.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.2.0...v1.3.0) (2021-07-09)
+
+### Features
+
+-   use request defaults ([901210e](https://github.com/archimedes-projects/archimedes-js/commit/901210e5fa3bf505c20da597302a90aec8daf02b))
+
 # [1.2.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.1.3...v1.2.0) (2021-06-23)
 
 ### Features
