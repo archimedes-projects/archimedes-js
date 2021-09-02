@@ -1,12 +1,12 @@
 import { CacheLink } from './cache-link'
 import { anything, instance, mock, verify, when } from 'ts-mockito'
-import { CacheManager } from '../cache/cache-manager'
-import { Context } from './context'
-import { UseCase } from '../use-case/use-case'
+import { CacheManager } from '../../cache/cache-manager'
+import { Context } from '../context'
+import { UseCase } from '../../use-case/use-case'
 import { Link } from './link'
-import { CacheInvalidations } from './cache-invalidations'
-import { InvalidationPolicy } from '../cache/invalidation-policy'
-import { Command } from '../use-case/command'
+import { CacheInvalidations } from '../cache-invalidations'
+import { InvalidationPolicy } from '../../cache/invalidation-policy'
+import { Command } from '../../use-case/command'
 
 describe('CacheLink', () => {
   it('should use the cache', () => {

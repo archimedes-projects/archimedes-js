@@ -1,5 +1,5 @@
 import { Runner } from './runner'
-import { Link } from './link'
+import { Link } from './links/link'
 import { anything, instance, mock, verify } from 'ts-mockito'
 import { UseCase } from '../use-case/use-case'
 

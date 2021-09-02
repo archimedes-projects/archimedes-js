@@ -1,5 +1,5 @@
 import { EmptyLink } from './empty-link'
-import { Context } from './context'
+import { Context } from '../context'
 import { Link } from './link'
 
 export abstract class BaseLink {

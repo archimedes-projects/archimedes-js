@@ -1,8 +1,8 @@
 import { Context } from './context'
 import { UseCase } from '../use-case/use-case'
-import { Link } from './link'
+import { Link } from './links/link'
 import { ExecutionOptions } from '../use-case/execution-options'
-import { NullLink } from './null-link'
+import { NullLink } from './links/null-link'
 
 export class Runner {
   private static chain: Link = new NullLink()

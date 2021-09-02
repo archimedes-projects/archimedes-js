@@ -1,6 +1,6 @@
 import { BaseLink } from './base-link'
-import { Context } from './context'
-import { Logger } from './logger'
+import { Context } from '../context'
+import { Logger } from '../logger'
 import { Datetime } from '@archimedes/utils'
 
 export class LoggerLink extends BaseLink {

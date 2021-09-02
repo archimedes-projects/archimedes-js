@@ -1,9 +1,9 @@
 import { NotificationLink } from './notification-link'
 import { deepEqual, instance, mock, verify } from 'ts-mockito'
-import { NotificationCenter } from '../notifications/notification-center'
-import { Context } from './context'
+import { NotificationCenter } from '../../notifications/notification-center'
+import { Context } from '../context'
 import { Link } from './link'
-import { UseCase } from '../use-case/use-case'
+import { UseCase } from '../../use-case/use-case'
 
 describe.skip('NotificationLink', () => {
   it('should create a new notification when there is an error', async () => {

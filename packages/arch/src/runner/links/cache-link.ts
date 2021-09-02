@@ -1,9 +1,9 @@
 import { BaseLink } from './base-link'
-import { Context } from './context'
-import { CacheManager } from '../cache/cache-manager'
-import { InvalidationPolicy } from '../cache/invalidation-policy'
-import { CacheKey } from '../cache/cache-key'
-import { CacheInvalidations } from './cache-invalidations'
+import { Context } from '../context'
+import { CacheManager } from '../../cache/cache-manager'
+import { InvalidationPolicy } from '../../cache/invalidation-policy'
+import { CacheKey } from '../../cache/cache-key'
+import { CacheInvalidations } from '../cache-invalidations'
 
 export class CacheLink extends BaseLink {
   constructor(private readonly cacheManager: CacheManager) {

@@ -1,6 +1,6 @@
 import { BaseLink } from './base-link'
-import { Context } from './context'
-import { NotificationCenter } from '../notifications/notification-center'
+import { Context } from '../context'
+import { NotificationCenter } from '../../notifications/notification-center'
 
 export class NotificationLink extends BaseLink {
   constructor(private readonly notificationCenter: NotificationCenter) {

@@ -1,5 +1,5 @@
 import { Link } from './link'
-import { Context } from './context'
+import { Context } from '../context'
 
 export class EmptyLink implements Link {
   setNext(_link: Link): Link {
