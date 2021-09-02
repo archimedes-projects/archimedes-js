@@ -1,4 +1,4 @@
-name: Publish
+name: Publish Alpha
 on: workflow_dispatch
 jobs:
   publish:
@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: yarn run build
       - name: Version
-        run: yarn run version --conventional-graduate
+        run: yarn run version --preid alpha
       - name: Publish
         run: yarn run publish
         env:
