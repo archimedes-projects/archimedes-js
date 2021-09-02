@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: yarn run build
       - name: Version
-        run: yarn run version --preid alpha
+        run: yarn run version --preid alpha --force-publish
       - name: Publish
         run: yarn run publish
         env:
