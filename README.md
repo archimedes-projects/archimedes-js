@@ -31,8 +31,8 @@ npm i @archimedes/components -SE
 
 ## Documentation
 
--   [Checkout the documentation](https://www.archimedesfw.io/).
--   [Checkout the examples](./examples).
+-   [Checkout the documentation](https://www.archimedesfw.io/)
+-   [Checkout the examples](./examples)
 
 ## Contributing
 
