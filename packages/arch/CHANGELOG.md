@@ -3,20 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.3.0-alpha.2](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-alpha.1...v1.3.0-alpha.2) (2021-09-02)
+# [1.3.0-beta.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-alpha.2...v1.3.0-beta.0) (2021-09-02)
 
+**Note:** Version bump only for package @archimedes/arch
+
+# [1.3.0-alpha.2](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-alpha.1...v1.3.0-alpha.2) (2021-09-02)
 
 ### Bug Fixes
 
-* add missing runner exports ([0dff355](https://github.com/archimedes-projects/archimedes-js/commit/0dff355265d60a01e6745569ef85f9ea751b6945))
-
-
+-   add missing runner exports ([0dff355](https://github.com/archimedes-projects/archimedes-js/commit/0dff355265d60a01e6745569ef85f9ea751b6945))
 
 # [1.3.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.2.0...v1.3.0) (2021-07-09)
-
-
-
-
 
 # [1.3.0-alpha.1](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-alpha.0...v1.3.0-alpha.1) (2021-09-01)
 
