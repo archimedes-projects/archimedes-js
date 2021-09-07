@@ -241,26 +241,15 @@
   dependencies:
     tslib "^2.0.0"
 
-"@archimedes/arch@*":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@archimedes/arch/-/arch-1.3.0.tgz#c515a9bfb7c2441837adf59da0189fc97ea5355f"
-  integrity sha512-bTplgpubzaHzQBaui83Pe1G+GYhnu1aXTCftFCWgUYZl/cAqnX+dkWPKPCpsNZR3zM+kuY9+LlJ9rQluMzNxhA==
+"@archimedes/arch@latest":
+  version "1.3.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@archimedes/arch/-/arch-1.3.0-beta.0.tgz#787b6d6ea72bc30c27be3229b5c17364b3b8378a"
+  integrity sha512-D0HvU7pjMarI/Gseau33MY6+b4vS5BLK0dun8j5249iChmlb8XXr4UjdvJGugeBIhcmodV12H0QIJV715BxnWg==
   dependencies:
-    "@archimedes/utils" "1.3.0"
+    "@archimedes/utils" "1.3.0-beta.0"
     reflect-metadata "0.1.13"
     tiny-lru "7.0.6"
     ts-md5 "1.2.7"
-
-"@archimedes/arch@file:packages/arch/dist":
-  version "0.0.0"
-
-"@archimedes/utils@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@archimedes/utils/-/utils-1.3.0.tgz#017abb79102ba104c819bcdb3a3dae00c166f097"
-  integrity sha512-5ISWegc5Palr7Z5whFPuQWn2e4gKWmr6gZm1mMw1Mu6U/xAXZtp6G2/F/Muk+JQVXpBU80u/+nBS3RRAYtPMKg==
-  dependencies:
-    "@types/luxon" "1.26.5"
-    luxon "1.26.0"
 
 "@babel/code-frame@7.10.4":
   version "7.10.4"
