@@ -1,6 +1,8 @@
 {
-  "packages": ["packages/*"],
-  "version": "1.3.0-beta.0",
+  "packages": [
+    "packages/*"
+  ],
+  "version": "1.3.0-beta.1",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
@@ -9,7 +11,9 @@
     },
     "version": {
       "allowBranch": "main",
-      "ignoreChanges": ["**/*.md"],
+      "ignoreChanges": [
+        "**/*.md"
+      ],
       "conventionalCommits": true
     }
   }
