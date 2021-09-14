@@ -6,7 +6,7 @@ export class Context {
 
   private constructor(
     public useCase: UseCase<unknown, unknown>,
-    readonly executionOptions: ExecutionOptions,
+    readonly executionOptions: Partial<ExecutionOptions>,
     readonly param?: unknown
   ) {}
 
@@ -17,7 +17,7 @@ export class Context {
   }: {
     useCase: UseCase<unknown, unknown>
     param?: unknown
-    executionOptions: ExecutionOptions
+    executionOptions: Partial<ExecutionOptions>
   }) {
     return new Context(useCase, executionOptions, param)
   }
