@@ -11,6 +11,7 @@
     "build": "yarn run clean && yarn run build:components && yarn run build:packages",
     "build:components": "lerna exec --scope @archimedes/components -- npm run build",
     "build:packages": "lerna exec --scope @archimedes/arch --scope @archimedes/utils -- bili --config ../../bili.config.ts",
+    "compile": "lerna exec --scope @archimedes/arch --scope @archimedes/utils -- tsc --noEmit",
     "test": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",

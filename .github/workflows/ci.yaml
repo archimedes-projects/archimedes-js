@@ -22,6 +22,8 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: install
         run: yarn
+      - name: compile
+        run: yarn run compile
       - name: build
         run: yarn run build
       - name: test

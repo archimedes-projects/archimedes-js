@@ -12,7 +12,7 @@ describe('CacheLink', () => {
   it('should use the cache', () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(false)
-    class MockUseCase extends UseCase {
+    class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
       async internalExecute(): Promise<void> {}
     }
@@ -31,7 +31,7 @@ describe('CacheLink', () => {
   it('should break the link if it is cached', () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
-    class MockUseCase extends UseCase {
+    class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
       async internalExecute(): Promise<void> {}
     }
@@ -50,7 +50,7 @@ describe('CacheLink', () => {
   it('should not cache commands', () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(false)
-    class MockUseCase extends Command {
+    class MockUseCase extends Command<unknown, unknown> {
       async internalExecute(): Promise<void> {}
     }
     const context = Context.create({
@@ -68,7 +68,7 @@ describe('CacheLink', () => {
   it('should invalidate using no cache policy', () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
-    class MockUseCase extends UseCase {
+    class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
       async internalExecute(): Promise<void> {}
     }
@@ -89,7 +89,7 @@ describe('CacheLink', () => {
   it('should invalidate using all cache policy', () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
-    class MockUseCase extends UseCase {
+    class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
       async internalExecute(): Promise<void> {}
     }
@@ -110,7 +110,7 @@ describe('CacheLink', () => {
   it('should invalidate using all cache policy', () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
-    class MockUseCase extends UseCase {
+    class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
       async internalExecute(): Promise<void> {}
     }

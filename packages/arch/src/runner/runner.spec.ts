@@ -7,7 +7,7 @@ describe.skip('Runner', () => {
   it('should run the runner', () => {
     const link = mock<Link>()
     Runner.createChain([link])
-    const useCase = mock<UseCase<Promise<unknown>, unknown>>()
+    const useCase = mock<UseCase<unknown, unknown>>()
 
     Runner.run(instance(useCase), { inlineError: false })
 

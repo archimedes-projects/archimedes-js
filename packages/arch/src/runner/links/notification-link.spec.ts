@@ -11,7 +11,7 @@ describe.skip('NotificationLink', () => {
     const { notificationCenter, notificationLink, link } = setup()
     try {
       notificationLink.setNext(instance(link))
-      class MockUseCase extends UseCase {
+      class MockUseCase extends UseCase<unknown, unknown> {
         readonly = true
         internalExecute(): Promise<void> {
           throw new Error('error')
@@ -39,7 +39,7 @@ describe.skip('NotificationLink', () => {
     expect.assertions(1)
     const { notificationLink, link } = setup()
     notificationLink.setNext(instance(link))
-    class MockUseCase extends UseCase {
+    class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
       internalExecute(): Promise<void> {
         throw new Error('error')
@@ -66,7 +66,7 @@ describe.skip('NotificationLink', () => {
     expect.assertions(1)
     const { notificationLink, link } = setup()
     notificationLink.setNext(instance(link))
-    class MockUseCase extends UseCase {
+    class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
       internalExecute(): Promise<void> {
         throw new Error('error')

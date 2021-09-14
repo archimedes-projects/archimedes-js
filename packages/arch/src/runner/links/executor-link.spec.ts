@@ -7,7 +7,7 @@ import { Link } from './link'
 describe('ExecutorLink', () => {
   it('should execute', () => {
     const { context, nextLink, executorLink } = setup()
-    const useCase = mock<UseCase<Promise<unknown>, unknown>>()
+    const useCase = mock<UseCase<unknown, unknown>>()
     when(context.useCase).thenReturn(instance(useCase))
     when(context.param).thenReturn(undefined)
     executorLink.setNext(instance(nextLink))
@@ -19,7 +19,7 @@ describe('ExecutorLink', () => {
 
   it('should call next link', () => {
     const { context, nextLink, executorLink } = setup()
-    const useCase = mock<UseCase<Promise<unknown>, unknown>>()
+    const useCase = mock<UseCase<unknown, unknown>>()
     when(context.useCase).thenReturn(instance(useCase))
     when(context.param).thenReturn(undefined)
     executorLink.setNext(instance(nextLink))
