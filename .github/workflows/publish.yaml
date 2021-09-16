@@ -30,7 +30,7 @@ jobs:
       - name: Version
         run: yarn run compile
       - name: Build
-        run: yarn run version --conventional-graduate
+        run: yarn run version
       - name: Publish
         run: yarn run publish
         env:
