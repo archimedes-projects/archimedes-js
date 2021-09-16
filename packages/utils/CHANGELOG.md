@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0-beta.1...v1.4.0) (2021-09-16)
+
+**Note:** Version bump only for package @archimedes/utils
+
 # [1.4.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.3...v1.4.0-beta.1) (2021-09-16)
 
 **Note:** Version bump only for package @archimedes/utils
