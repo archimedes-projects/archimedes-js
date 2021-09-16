@@ -26,10 +26,10 @@ jobs:
       - name: Install
         run: yarn install
       - name: compile
-        run: yarn run compile
-      - name: Build
         run: yarn run build
       - name: Version
+        run: yarn run compile
+      - name: Build
         run: yarn run version --conventional-graduate
       - name: Publish
         run: yarn run publish
