@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2021-09-16)
+
+
+### Bug Fixes
+
+* make execution options optional ([06aea77](https://github.com/archimedes-projects/archimedes-js/commit/06aea778252f785d8bc67ad52eb5634b49d3fd69))
+
+
+
+
+
 # [1.3.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.0...v1.3.0-beta.1) (2021-09-07)
 
 
