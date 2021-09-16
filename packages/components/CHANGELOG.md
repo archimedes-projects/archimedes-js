@@ -3,21 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.2...v1.3.0-beta.3) (2021-09-16)
+
+**Note:** Version bump only for package @archimedes/components
+
 # [1.3.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2021-09-16)
 
 **Note:** Version bump only for package @archimedes/components
 
-
-
-
-
 # [1.3.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.0...v1.3.0-beta.1) (2021-09-07)
 
 **Note:** Version bump only for package @archimedes/components
-
-
-
-
 
 # [1.3.0-beta.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-alpha.2...v1.3.0-beta.0) (2021-09-02)
 

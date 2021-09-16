@@ -3,27 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.3.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2021-09-16)
-
-
-### Bug Fixes
-
-* make execution options optional ([06aea77](https://github.com/archimedes-projects/archimedes-js/commit/06aea778252f785d8bc67ad52eb5634b49d3fd69))
-
-
-
-
-
-# [1.3.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.0...v1.3.0-beta.1) (2021-09-07)
-
+# [1.3.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.2...v1.3.0-beta.3) (2021-09-16)
 
 ### Features
 
-* pass result, param and executionOptions to subscribe callback ([a6f46a7](https://github.com/archimedes-projects/archimedes-js/commit/a6f46a754fa70661e40046d80974f2b5f155eb3b))
+-   use type exports ([9e0e473](https://github.com/archimedes-projects/archimedes-js/commit/9e0e473e49f8c95afa958ab050a76322efb1ecaa))
 
+# [1.3.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2021-09-16)
 
+### Bug Fixes
 
+-   make execution options optional ([06aea77](https://github.com/archimedes-projects/archimedes-js/commit/06aea778252f785d8bc67ad52eb5634b49d3fd69))
 
+# [1.3.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-beta.0...v1.3.0-beta.1) (2021-09-07)
+
+### Features
+
+-   pass result, param and executionOptions to subscribe callback ([a6f46a7](https://github.com/archimedes-projects/archimedes-js/commit/a6f46a754fa70661e40046d80974f2b5f155eb3b))
 
 # [1.3.0-beta.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.3.0-alpha.2...v1.3.0-beta.0) (2021-09-02)
 
