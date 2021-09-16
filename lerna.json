@@ -10,7 +10,7 @@
     "version": {
       "allowBranch": "main",
       "ignoreChanges": ["**/*.md"],
-      "conventionalCommits": true
+      "conventionalCommits": false
     }
   }
 }
