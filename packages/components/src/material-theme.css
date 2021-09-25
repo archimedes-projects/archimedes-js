@@ -8,4 +8,11 @@
   --on-error-color: white;
   --info-color: blue;
   --on-info-color: blue;
+
+  --blue: blue;
+  --deep-blue: darkblue;
+
+  --white: white;
+  --gray: #D1D1D1D1;
+  --gray-dark: #A2A0A0D1;
 }

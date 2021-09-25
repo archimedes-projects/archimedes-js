@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.button {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  border-radius: var(--border-radius);
+  padding: var(--s) var(--m);
+  cursor: pointer;
+
+  font-weight: 900;
+
+  text-transform: none;
+  letter-spacing: 0.2px;
+  height: 100%;
+}
+
+.primary-theme {
+  background-color: var(--gray);
+  color: var(--deep-blue);
+  width: 100%;
+}
+
+.primary-theme:hover {
+  background-color: var(--gray-dark);
+}
+
+.secondary-theme {
+  border: 1px solid var(--blue);
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.secondary-theme:hover {
+   background-color: var(--gray);
+ }
+
+._blank {
+  border: none;
+  background-color: transparent;
+  color: var(--deep-blue);
+}
+
+._blank:hover {
+   background-color: transparent;
+ }
+
