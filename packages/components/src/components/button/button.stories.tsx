@@ -3,5 +3,5 @@ export default {
 }
 
 export const Base = () => {
-  return `<arch-button text="Custom Button" appearance="secondary-theme"></arch-button>`
+  return `<arch-button theme="secondary">Custom Button</arch-button>`
 }

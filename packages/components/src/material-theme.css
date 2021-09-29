@@ -9,10 +9,8 @@
   --info-color: blue;
   --on-info-color: blue;
 
-  --blue: blue;
-  --deep-blue: darkblue;
-
-  --white: white;
-  --gray: #D1D1D1D1;
-  --gray-dark: #A2A0A0D1;
+  --primary-color: blue;
+  --on-primary-color: white;
+  --secondary-color: #4949f5;
+  --on-secondary-color: black;
 }

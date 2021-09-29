@@ -10,40 +10,16 @@
   padding: var(--s) var(--m);
   cursor: pointer;
 
-  font-weight: 900;
-
-  text-transform: none;
-  letter-spacing: 0.2px;
+  width: 100%;
   height: 100%;
 }
 
-.primary-theme {
-  background-color: var(--gray);
-  color: var(--deep-blue);
-  width: 100%;
+.primary {
+  background-color: var(--primary-color);
+  color: var(--on-primary-color);
 }
 
-.primary-theme:hover {
-  background-color: var(--gray-dark);
+.secondary {
+  background-color: var(--secondary-color);
+  color: var(--on-secondary-color);
 }
-
-.secondary-theme {
-  border: 1px solid var(--blue);
-  background-color: var(--white);
-  color: var(--blue);
-}
-
-.secondary-theme:hover {
-   background-color: var(--gray);
- }
-
-._blank {
-  border: none;
-  background-color: transparent;
-  color: var(--deep-blue);
-}
-
-._blank:hover {
-   background-color: transparent;
- }
-

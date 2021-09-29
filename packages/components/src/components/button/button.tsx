@@ -1,6 +1,6 @@
-import {Component, Event, EventEmitter, h, Prop} from '@stencil/core'
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core'
 
-type ButtonStyles = | 'primary-theme' | 'secondary-theme' | '_blank'
+type Theme = 'primary' | 'secondary'
 
 @Component({
   tag: 'arch-button',
@@ -9,35 +9,31 @@ type ButtonStyles = | 'primary-theme' | 'secondary-theme' | '_blank'
 })
 export class Button {
   @Prop()
-  text!: string
-
-  @Prop()
   type: 'button' | 'submit' = 'button'
 
   @Prop()
   disabled = false
 
   @Prop()
-  appearance: ButtonStyles = 'primary-theme';
+  theme: Theme = 'primary'
 
   @Event()
-  clicked!: EventEmitter<unknown>
+  clicked!: EventEmitter<MouseEvent>
 
-  handleClick() {
-    this.clicked.emit()
+  handleClick(event: MouseEvent) {
+    this.clicked.emit(event)
   }
 
   render() {
     return (
-        <button
-          class={`button ${this.appearance}`}
-          type={this.type}
-          disabled={this.disabled}
-          onClick={() => this.handleClick()}
-        >
-          {/* Slot */}
-          {this.text}
-        </button>
+      <button
+        class={`button ${this.theme}`}
+        type={this.type}
+        disabled={this.disabled}
+        onClick={event => this.handleClick(event)}
+      >
+        <slot />
+      </button>
     )
   }
 }
