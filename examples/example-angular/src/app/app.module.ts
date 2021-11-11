@@ -6,7 +6,7 @@ import { BarQry } from './bar-qry'
 import { CacheInvalidations } from '@archimedes/arch'
 import { QuxCmd } from './qux-cmd'
 import { BazQry } from './baz-qry'
-import { ArchimedesModule } from 'src/core/modules/archimedes/archimedes.module'
+import { ArchimedesModule } from '../core/modules/archimedes/archimedes.module'
 
 @NgModule({
   declarations: [AppComponent],
