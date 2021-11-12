@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.button {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  border-radius: var(--border-radius);
+  padding: var(--s) var(--m);
+  cursor: pointer;
+
+  width: 100%;
+  height: 100%;
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: var(--on-primary-color);
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+  color: var(--on-secondary-color);
+}
