@@ -1,4 +1,4 @@
-import { HttpClient, Options } from './http-client'
+import { CreateOptions, HttpClient } from './http-client'
 
 describe('HttpClient', () => {
   it('should configure base url', async () => {
@@ -84,11 +84,39 @@ describe('HttpClient', () => {
       { method: 'DELETE' }
     )
   })
+
+  it('should execute after hook', async () => {
+    const mock = jest.fn()
+    const options = { hooks: { after: [mock] }, result: 'foo' }
+    const { httpClient } = setup(options)
+
+    await httpClient.get('http://foo')
+
+    expect(mock).toHaveBeenCalledWith(expect.anything(), {
+      hooks: { after: [mock], before: [] },
+      baseUrl: '',
+      defaults: undefined
+    })
+  })
+
+  it('should execute before hook', async () => {
+    const mock = jest.fn()
+    const options = { hooks: { before: [mock] }, result: 'foo' }
+    const { httpClient } = setup(options)
+
+    await httpClient.get('http://foo')
+
+    expect(mock).toHaveBeenCalledWith(expect.anything(), {
+      hooks: { after: [], before: [mock] },
+      baseUrl: '',
+      defaults: undefined
+    })
+  })
 })
 
-function setup(options?: Partial<Options>) {
+function setup<T>(options?: CreateOptions & Partial<{ result: T }>) {
   const fetchMock = jest.fn()
-  fetchMock.mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(), ok: true }))
+  fetchMock.mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(options?.result), ok: true }))
   window.fetch = fetchMock
 
   return {

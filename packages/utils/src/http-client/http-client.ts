@@ -3,14 +3,16 @@ import { HttpParams } from './http-params'
 
 type Url = string
 
-type BeforeHook = (request: Request, options: Options) => void
-type AfterHook = (response: any, options: Options) => void
+export type BeforeHook = (request: Request, options: Options) => void
+export type AfterHook = (response: Response & { result: unknown }, options: Options) => void
 
 export type Options = {
   baseUrl: Url
   hooks: { before: BeforeHook[]; after: AfterHook[] }
   defaults?: RequestInit
 }
+
+export type CreateOptions = Partial<Omit<Options, 'hooks'> & { hooks: { before?: BeforeHook[]; after?: AfterHook[] } }>
 
 const defaultOptions = {
   baseUrl: '',
@@ -27,8 +29,15 @@ export class HttpClient {
     baseUrl = defaultOptions.baseUrl,
     hooks = { ...defaultOptions.hooks },
     defaults
-  }: Partial<Options> = defaultOptions) {
-    return new HttpClient({ baseUrl, hooks, defaults: defaults })
+  }: CreateOptions = defaultOptions) {
+    const defaultBeforeHooks = hooks?.before ?? []
+    const defaultAfterHooks = hooks?.after ?? []
+
+    return new HttpClient({
+      baseUrl,
+      hooks: { before: defaultBeforeHooks, after: defaultAfterHooks },
+      defaults
+    })
   }
 
   private constructor(private readonly options: Options) {}
@@ -53,7 +62,8 @@ export class HttpClient {
     const request = this.getRequest(url, httpParams)
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await fetch(request, { ...this.options.defaults, ...options })
-    this.options.hooks.after.forEach(hook => hook(response, this.options))
+    const result = await response.json()
+    this.options.hooks.after.forEach(hook => hook({ ...response, result }, this.options))
     return this.getResponse(response)
   }
 
