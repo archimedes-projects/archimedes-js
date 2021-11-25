@@ -1,5 +1,8 @@
-import { CacheInvalidations, Command, InvalidationPolicy, Query } from '@archimedes/arch'
 import { Class } from '@archimedes/utils'
+import { CacheInvalidations } from '../runner/cache-invalidations'
+import { Command } from '../use-case/command'
+import { Query } from '../use-case/query'
+import { InvalidationPolicy } from './invalidation-policy'
 
 const LOG_MESSAGES = {
   CMD_MISSING_DECORATOR: (cmdName: string) =>
