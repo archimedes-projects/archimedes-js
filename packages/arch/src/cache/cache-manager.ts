@@ -60,7 +60,7 @@ export class CacheManager {
    */
   private serializeQryArgs(args: unknown[]) {
     // Sort the object keys before stringifying, to prevent useQuery({ a: 1, b: 2 }) having a different cache key than useQuery({ b: 2, a: 1 })
-    return JSON.stringify(args, (key, value) =>
+    return JSON.stringify(args, (_, value) =>
       this.isPlainObject(value)
         ? Object.keys(value)
           .sort()
