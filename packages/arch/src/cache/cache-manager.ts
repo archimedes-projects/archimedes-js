@@ -1,7 +1,6 @@
 import { LruCache } from './lru-cache'
 import { Cache } from './cache'
 import { CacheKey } from './cache-key'
-import { Md5 } from 'ts-md5'
 import { Datetime, isPromise } from '@archimedes/utils'
 
 export class CacheManager {
@@ -11,7 +10,7 @@ export class CacheManager {
 
   isCached(cacheKey: CacheKey, args: unknown[]): boolean {
     const existingCache = this.caches.get(cacheKey)
-    const hash = this.getHash(args)
+    const hash = this.serializeQryArgs(args)
     return existingCache?.has(hash) ?? false
   }
 
@@ -21,7 +20,7 @@ export class CacheManager {
     }
 
     const existingCache = this.caches.get(cacheKey)!
-    const hash = this.getHash(args)
+    const hash = this.serializeQryArgs(args)
     const now = Datetime.now()
 
     if (!this.isCached(cacheKey, args)) {
@@ -51,7 +50,46 @@ export class CacheManager {
     this.caches.clear()
   }
 
-  private getHash(args: unknown[]) {
-    return new Md5().appendStr(JSON.stringify(args)).end() as string
+  /**
+   * Serialize the query arguments into a readable string
+   *
+   * @param {unknown[]} args The function arguments.
+   * @returns {string} The hash of the passed arguments.
+   *
+   * @private
+   */
+  private serializeQryArgs(args: unknown[]) {
+    // Sort the object keys before stringifying, to prevent useQuery({ a: 1, b: 2 }) having a different cache key than useQuery({ b: 2, a: 1 })
+    return JSON.stringify(args, (key, value) =>
+      this.isPlainObject(value)
+        ? Object.keys(value)
+          .sort()
+          .reduce<any>((acc, key) => {
+            acc[key] = (value as any)[key]
+            return acc
+          }, {})
+        : value
+    )
+  }
+
+  /**
+   * Returns true if the passed value is "plain" object, i.e. an object whose
+   * prototype is the root `Object.prototype`. This includes objects created
+   * using object literals, but not for instance for class instances.
+   *
+   * @param {any} value The value to inspect.
+   * @returns {boolean} True if the argument appears to be a plain object.
+   *
+   * @private
+   */
+  private isPlainObject(value: unknown): value is object {
+    if (typeof value !== "object" || value === null) return false
+
+    let proto = value
+    while (Object.getPrototypeOf(proto) !== null) {
+      proto = Object.getPrototypeOf(proto)
+    }
+
+    return Object.getPrototypeOf(value) === proto
   }
 }
