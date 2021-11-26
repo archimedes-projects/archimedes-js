@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core'
-import { EvictCache, Query } from '@archimedes/arch'
+import { CacheKey, Query } from '@archimedes/arch'
 
-@EvictCache
+@CacheKey('BQry')
 @Injectable({
   providedIn: 'root'
 })
-export class BazQry extends Query<number> {
+export class BQry extends Query<number> {
   async internalExecute(param: void): Promise<number> {
-    return 42
+    return 2
   }
 }

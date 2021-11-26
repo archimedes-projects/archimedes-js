@@ -1,21 +1,12 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { AppComponent } from './app.component'
-import { FooCmd } from './foo-cmd'
-import { BarQry } from './bar-qry'
-import { CacheInvalidations } from '@archimedes/arch'
-import { QuxCmd } from './qux-cmd'
-import { BazQry } from './baz-qry'
-import { ArchimedesModule } from '../core/modules/archimedes/archimedes.module'
+import { ArchimedesModule } from '../core/modules/archimedes/archimedes.module';
+import { DemoComponent } from './features/demo/ui/demo/demo.component'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DemoComponent],
   imports: [BrowserModule, ArchimedesModule],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor() {
-    CacheInvalidations.set(FooCmd.name, [BarQry.name])
-    CacheInvalidations.set(QuxCmd.name, [BazQry.name])
-  }
-}
+export class AppModule {}
