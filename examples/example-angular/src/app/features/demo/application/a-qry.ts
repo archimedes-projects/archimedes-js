@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { CacheKey, Query } from '@archimedes/arch'
-import { BQry } from 'src/app/features/demo/application/b-qry'
+import { BQry } from './b-qry'
 
 @CacheKey('AQry')
 @Injectable({
