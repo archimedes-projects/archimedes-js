@@ -9,13 +9,16 @@ import { InvalidationPolicy } from '../../cache/invalidation-policy'
 import { Command } from '../../use-case/command'
 
 describe('CacheLink', () => {
-  it('should use the cache', () => {
+  it('should use the cache', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(false)
+
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
+
       async internalExecute(): Promise<void> {}
     }
+
     const context = Context.create({
       useCase: new MockUseCase(),
       param: undefined,
@@ -23,18 +26,21 @@ describe('CacheLink', () => {
     })
     cacheLink.setNext(instance(link))
 
-    cacheLink.next(context)
+    await cacheLink.next(context)
 
     verify(link.next(anything())).once()
   })
 
-  it('should break the link if it is cached', () => {
+  it('should break the link if it is cached', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
+
       async internalExecute(): Promise<void> {}
     }
+
     const context = Context.create({
       useCase: new MockUseCase(),
       param: undefined,
@@ -42,17 +48,19 @@ describe('CacheLink', () => {
     })
     cacheLink.setNext(instance(link))
 
-    cacheLink.next(context)
+    await cacheLink.next(context)
 
     verify(link.next(anything())).never()
   })
 
-  it('should not cache commands', () => {
+  it('should not cache commands', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(false)
+
     class MockUseCase extends Command<unknown, unknown> {
       async internalExecute(): Promise<void> {}
     }
+
     const context = Context.create({
       useCase: new MockUseCase(),
       param: undefined,
@@ -60,18 +68,21 @@ describe('CacheLink', () => {
     })
     cacheLink.setNext(instance(link))
 
-    cacheLink.next(context)
+    await cacheLink.next(context)
 
     verify(cacheManager.cache(anything(), anything())).never()
   })
 
-  it('should invalidate using no cache policy', () => {
+  it('should invalidate using no cache policy', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
+
       async internalExecute(): Promise<void> {}
     }
+
     CacheInvalidations.set(MockUseCase.name, [InvalidationPolicy.NO_CACHE])
     const context = Context.create({
       useCase: new MockUseCase(),
@@ -80,19 +91,22 @@ describe('CacheLink', () => {
     })
     cacheLink.setNext(instance(link))
 
-    cacheLink.next(context)
+    await cacheLink.next(context)
 
     verify(cacheManager.invalidateCache(MockUseCase.name)).once()
     CacheInvalidations.clear()
   })
 
-  it('should invalidate using all cache policy', () => {
+  it('should invalidate using all cache policy', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
+
       async internalExecute(): Promise<void> {}
     }
+
     CacheInvalidations.set(MockUseCase.name, [InvalidationPolicy.ALL])
     const context = Context.create({
       useCase: new MockUseCase(),
@@ -101,19 +115,22 @@ describe('CacheLink', () => {
     })
     cacheLink.setNext(instance(link))
 
-    cacheLink.next(context)
+    await cacheLink.next(context)
 
     verify(cacheManager.invalidateCaches()).once()
     CacheInvalidations.clear()
   })
 
-  it('should invalidate using all cache policy', () => {
+  it('should invalidate using all cache policy', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
+
       async internalExecute(): Promise<void> {}
     }
+
     CacheInvalidations.set(MockUseCase.name, ['Foo'])
     CacheInvalidations.set('Foo', ['Bar'])
     const context = Context.create({
@@ -123,7 +140,7 @@ describe('CacheLink', () => {
     })
     cacheLink.setNext(instance(link))
 
-    cacheLink.next(context)
+    await cacheLink.next(context)
 
     verify(cacheManager.invalidateCache('Foo')).once()
     verify(cacheManager.invalidateCache('Bar')).once()

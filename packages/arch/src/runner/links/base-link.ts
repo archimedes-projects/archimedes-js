@@ -10,5 +10,5 @@ export abstract class BaseLink {
     return this
   }
 
-  abstract next(context: Context): void
+  abstract next(context: Context): Promise<void>
 }

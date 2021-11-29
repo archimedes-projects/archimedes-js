@@ -4,12 +4,12 @@ import { Context } from '../context'
 import { ChainError } from '../chain-error'
 
 describe('NullLink', () => {
-  it('should throw chain error', () => {
+  it('should throw chain error', async () => {
     const nullLink = new NullLink()
     const context = mock(Context)
 
     try {
-      nullLink.next(instance(context))
+      await nullLink.next(instance(context))
     } catch (e) {
       expect(e).toEqual(new ChainError())
     }

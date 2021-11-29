@@ -10,7 +10,7 @@ export class CacheLink extends BaseLink {
     super()
   }
 
-  next(context: Context): void {
+  async next(context: Context): Promise<void> {
     const name = context.useCase.constructor.name
 
     if (!this.cacheManager.isCached(name, [context.param])) {
