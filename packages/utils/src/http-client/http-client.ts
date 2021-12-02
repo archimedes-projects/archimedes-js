@@ -11,17 +11,17 @@ export interface HttpClientResponse<Result> {
   options: RequestInit
 }
 
-export type HttpClientBeforeHook = (request: Request, options: HttpclientOptions) => void
-export type HttpClientAfterHook = (response: Response & { result: unknown }, options: HttpclientOptions) => void
+export type HttpClientBeforeHook = (request: Request, options: HttpClientOptions) => void
+export type HttpClientAfterHook = (response: Response & { result: unknown }, options: HttpClientOptions) => void
 
-export interface HttpclientOptions {
+export interface HttpClientOptions {
   baseUrl: Url
   hooks: { before: HttpClientBeforeHook[]; after: HttpClientAfterHook[] }
   defaults?: RequestInit
 }
 
 export type HttpClientCreateOptions = Partial<
-  Omit<HttpclientOptions, 'hooks'> & { hooks: { before?: HttpClientBeforeHook[]; after?: HttpClientAfterHook[] } }
+  Omit<HttpClientOptions, 'hooks'> & { hooks: { before?: HttpClientBeforeHook[]; after?: HttpClientAfterHook[] } }
 >
 
 const defaultOptions = {
@@ -50,7 +50,7 @@ export class HttpClient {
     })
   }
 
-  private constructor(private readonly options: HttpclientOptions) {}
+  private constructor(private readonly options: HttpClientOptions) {}
 
   async get<Result>(url: Url, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'GET' }, httpParams)

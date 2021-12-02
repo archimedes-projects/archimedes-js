@@ -14,7 +14,7 @@ export type {
   HttpClientCreateOptions,
   HttpClientAfterHook,
   HttpClientBeforeHook,
-  HttpclientOptions,
+  HttpClientOptions,
   HttpClientResponse
 } from './http-client/http-client'
 export { HttpParams } from './http-client/http-params'
