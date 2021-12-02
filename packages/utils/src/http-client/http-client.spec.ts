@@ -1,4 +1,4 @@
-import { CreateOptions, HttpClient } from './http-client'
+import { HttpClientCreateOptions, HttpClient } from './http-client'
 
 describe('HttpClient', () => {
   it('should configure base url', async () => {
@@ -114,7 +114,7 @@ describe('HttpClient', () => {
   })
 })
 
-function setup<T>(options?: CreateOptions & Partial<{ result: T }>) {
+function setup<T>(options?: HttpClientCreateOptions & Partial<{ result: T }>) {
   const fetchMock = jest.fn()
   fetchMock.mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(options?.result), ok: true }))
   window.fetch = fetchMock

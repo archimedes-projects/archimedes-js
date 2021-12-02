@@ -4,23 +4,25 @@ import { HttpStatusCode } from './http-status-code'
 
 type Url = string
 
-export interface HttpResponse<Result> {
+export interface HttpClientResponse<Result> {
   result: Result
   status: HttpStatusCode
   headers: Headers
   options: RequestInit
 }
 
-export type BeforeHook = (request: Request, options: Options) => void
-export type AfterHook = (response: Response & { result: unknown }, options: Options) => void
+export type HttpClientBeforeHook = (request: Request, options: HttpclientOptions) => void
+export type HttpClientAfterHook = (response: Response & { result: unknown }, options: HttpclientOptions) => void
 
-export type Options = {
+export interface HttpclientOptions {
   baseUrl: Url
-  hooks: { before: BeforeHook[]; after: AfterHook[] }
+  hooks: { before: HttpClientBeforeHook[]; after: HttpClientAfterHook[] }
   defaults?: RequestInit
 }
 
-export type CreateOptions = Partial<Omit<Options, 'hooks'> & { hooks: { before?: BeforeHook[]; after?: AfterHook[] } }>
+export type HttpClientCreateOptions = Partial<
+  Omit<HttpclientOptions, 'hooks'> & { hooks: { before?: HttpClientBeforeHook[]; after?: HttpClientAfterHook[] } }
+>
 
 const defaultOptions = {
   baseUrl: '',
@@ -37,7 +39,7 @@ export class HttpClient {
     baseUrl = defaultOptions.baseUrl,
     hooks = { ...defaultOptions.hooks },
     defaults
-  }: CreateOptions = defaultOptions) {
+  }: HttpClientCreateOptions = defaultOptions) {
     const defaultBeforeHooks = hooks?.before ?? []
     const defaultAfterHooks = hooks?.after ?? []
 
@@ -48,21 +50,21 @@ export class HttpClient {
     })
   }
 
-  private constructor(private readonly options: Options) {}
+  private constructor(private readonly options: HttpclientOptions) {}
 
-  async get<Result>(url: Url, httpParams?: HttpParams): Promise<HttpResponse<Result>> {
+  async get<Result>(url: Url, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'GET' }, httpParams)
   }
 
-  async post<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<HttpResponse<Result>> {
+  async post<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'POST', body: this.getParsedBody(body) }, httpParams)
   }
 
-  async put<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<HttpResponse<Result>> {
+  async put<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'PUT', body: this.getParsedBody(body) }, httpParams)
   }
 
-  async delete<Result>(url: string, httpParams?: HttpParams): Promise<HttpResponse<Result>> {
+  async delete<Result>(url: string, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'DELETE' }, httpParams)
   }
 
@@ -70,7 +72,7 @@ export class HttpClient {
     url: string,
     options: RequestInit,
     httpParams?: HttpParams
-  ): Promise<HttpResponse<Result>> {
+  ): Promise<HttpClientResponse<Result>> {
     const request = this.getRequest(url, httpParams)
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await fetch(request, { ...this.options.defaults, ...options })
@@ -96,7 +98,7 @@ export class HttpClient {
     return JSON.stringify(body)
   }
 
-  private async getResponse<Result>(response: Response, options: RequestInit): Promise<HttpResponse<Result>> {
+  private async getResponse<Result>(response: Response, options: RequestInit): Promise<HttpClientResponse<Result>> {
     if (!response.ok) {
       throw new HttpError({ name: response.status.toString(), message: response.statusText })
     }
