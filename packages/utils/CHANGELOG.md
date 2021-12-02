@@ -3,16 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.5.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0...v1.5.0) (2021-11-23)
+## [2.0.0-alpha.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.0) (2021-12-03)
 
+### ⚠ BREAKING CHANGES
+
+-   rename exports
+-   wrap http-client in a http response object
 
 ### Features
 
-* return result in the after hook ([4f29d99](https://github.com/archimedes-projects/archimedes-js/commit/4f29d99cb2c4916f31975230e8c98280ecd7d993))
+-   add options ([cddebdb](https://github.com/archimedes-projects/archidemes-js/commit/cddebdb4341a07baafc5bfaca6e61cddb8044526))
+-   fix typo ([1446e66](https://github.com/archimedes-projects/archidemes-js/commit/1446e666071dfb95f74a7f98ad87eca07b7652af))
+-   rename exports ([43e4bd8](https://github.com/archimedes-projects/archidemes-js/commit/43e4bd83aec13258d1454a0e5fecd3152202f3c0))
+-   use export type ([107c758](https://github.com/archimedes-projects/archidemes-js/commit/107c758c510edebfff4efe44c5e95fe26b9c7d55))
+-   wrap http-client in a http response object ([cd63e90](https://github.com/archimedes-projects/archidemes-js/commit/cd63e9000526b5dfc33e10f84b93329d6c6a720d))
 
+# [1.5.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0...v1.5.0) (2021-11-23)
 
+### Features
 
-
+-   return result in the after hook ([4f29d99](https://github.com/archimedes-projects/archimedes-js/commit/4f29d99cb2c4916f31975230e8c98280ecd7d993))
 
 # [1.4.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0-beta.1...v1.4.0) (2021-09-16)
 
