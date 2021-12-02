@@ -5,6 +5,29 @@ import { StringUnitLength } from './string-unit-length'
 import { InfoOptions } from './info-options'
 
 export class Datetime {
+  static readonly DATETIME_FULL = LuxonDatetime.DATETIME_FULL
+  static readonly DATETIME_FULL_WITH_SECONDS = LuxonDatetime.DATETIME_FULL_WITH_SECONDS
+  static readonly DATETIME_HUGE = LuxonDatetime.DATETIME_HUGE
+  static readonly DATETIME_HUGE_WITH_SECONDS = LuxonDatetime.DATETIME_HUGE_WITH_SECONDS
+  static readonly DATETIME_MED = LuxonDatetime.DATETIME_MED
+  static readonly DATETIME_MED_WITH_SECONDS = LuxonDatetime.DATETIME_MED_WITH_SECONDS
+  static readonly DATETIME_MED_WITH_WEEKDAY = LuxonDatetime.DATETIME_MED_WITH_WEEKDAY
+  static readonly DATETIME_SHORT = LuxonDatetime.DATETIME_SHORT
+  static readonly DATETIME_SHORT_WITH_SECONDS = LuxonDatetime.DATETIME_SHORT_WITH_SECONDS
+  static readonly DATE_FULL = LuxonDatetime.DATE_FULL
+  static readonly DATE_HUGE = LuxonDatetime.DATE_HUGE
+  static readonly DATE_MED = LuxonDatetime.DATE_MED
+  static readonly DATE_MED_WITH_WEEKDAY = LuxonDatetime.DATE_MED_WITH_WEEKDAY
+  static readonly DATE_SHORT = LuxonDatetime.DATE_SHORT
+  static readonly TIME_24_SIMPLE = LuxonDatetime.TIME_24_SIMPLE
+  static readonly TIME_24_WITH_LONG_OFFSET = LuxonDatetime.TIME_24_WITH_LONG_OFFSET
+  static readonly TIME_24_WITH_SECONDS = LuxonDatetime.TIME_24_WITH_SECONDS
+  static readonly TIME_24_WITH_SHORT_OFFSET = LuxonDatetime.TIME_24_WITH_SHORT_OFFSET
+  static readonly TIME_SIMPLE = LuxonDatetime.TIME_SIMPLE
+  static readonly TIME_WITH_LONG_OFFSET = LuxonDatetime.TIME_WITH_LONG_OFFSET
+  static readonly TIME_WITH_SECONDS = LuxonDatetime.TIME_WITH_SECONDS
+  static readonly TIME_WITH_SHORT_OFFSET = LuxonDatetime.TIME_WITH_SHORT_OFFSET
+
   static now(): Datetime {
     return new Datetime(LuxonDatetime.local().setZone('utc'))
   }
