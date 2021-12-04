@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core'
+import { Component, Event, EventEmitter, h, Listen, Prop } from '@stencil/core'
 
 type Theme = 'primary' | 'secondary'
 
@@ -20,18 +20,16 @@ export class Button {
   @Event()
   clicked!: EventEmitter<MouseEvent>
 
+  @Listen('click')
   handleClick(event: MouseEvent) {
     this.clicked.emit(event)
   }
 
   render() {
+    const { theme, type, disabled } = this
+
     return (
-      <button
-        class={`button ${this.theme}`}
-        type={this.type}
-        disabled={this.disabled}
-        onClick={event => this.handleClick(event)}
-      >
+      <button class={`button ${theme}`} type={type} disabled={disabled}>
         <slot />
       </button>
     )
