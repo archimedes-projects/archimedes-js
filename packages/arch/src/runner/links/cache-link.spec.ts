@@ -11,7 +11,7 @@ import { Command } from '../../use-case/command'
 describe('CacheLink', () => {
   it('should use the cache', async () => {
     const { link, cacheManager, cacheLink } = setup()
-    when(cacheManager.isCached(anything(), anything())).thenReturn(false)
+    when(cacheManager.has(anything(), anything())).thenReturn(false)
 
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
@@ -33,7 +33,7 @@ describe('CacheLink', () => {
 
   it('should break the link if it is cached', async () => {
     const { link, cacheManager, cacheLink } = setup()
-    when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+    when(cacheManager.has(anything(), anything())).thenReturn(true)
 
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
@@ -55,7 +55,7 @@ describe('CacheLink', () => {
 
   it('should not cache commands', async () => {
     const { link, cacheManager, cacheLink } = setup()
-    when(cacheManager.isCached(anything(), anything())).thenReturn(false)
+    when(cacheManager.has(anything(), anything())).thenReturn(false)
 
     class MockUseCase extends Command<unknown, unknown> {
       async internalExecute(): Promise<void> {}
@@ -70,12 +70,12 @@ describe('CacheLink', () => {
 
     await cacheLink.next(context)
 
-    verify(cacheManager.cache(anything(), anything())).never()
+    verify(cacheManager.set(anything(), anything())).never()
   })
 
   it('should invalidate using no cache policy', async () => {
     const { link, cacheManager, cacheLink } = setup()
-    when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+    when(cacheManager.has(anything(), anything())).thenReturn(true)
 
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
@@ -93,13 +93,13 @@ describe('CacheLink', () => {
 
     await cacheLink.next(context)
 
-    verify(cacheManager.invalidateCache(MockUseCase.name)).once()
+    verify(cacheManager.invalidate(MockUseCase.name)).once()
     CacheInvalidations.clear()
   })
 
   it('should invalidate using all cache policy', async () => {
     const { link, cacheManager, cacheLink } = setup()
-    when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+    when(cacheManager.has(anything(), anything())).thenReturn(true)
 
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
@@ -117,13 +117,13 @@ describe('CacheLink', () => {
 
     await cacheLink.next(context)
 
-    verify(cacheManager.invalidateCaches()).once()
+    verify(cacheManager.invalidateAll()).once()
     CacheInvalidations.clear()
   })
 
   it('should invalidate using all cache policy', async () => {
     const { link, cacheManager, cacheLink } = setup()
-    when(cacheManager.isCached(anything(), anything())).thenReturn(true)
+    when(cacheManager.has(anything(), anything())).thenReturn(true)
 
     class MockUseCase extends UseCase<unknown, unknown> {
       readonly = true
@@ -142,8 +142,8 @@ describe('CacheLink', () => {
 
     await cacheLink.next(context)
 
-    verify(cacheManager.invalidateCache('Foo')).once()
-    verify(cacheManager.invalidateCache('Bar')).once()
+    verify(cacheManager.invalidate('Foo')).once()
+    verify(cacheManager.invalidate('Bar')).once()
     CacheInvalidations.clear()
   })
 })
