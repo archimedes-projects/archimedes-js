@@ -5,10 +5,12 @@
   "workspaces": [
     "packages/arch",
     "packages/utils",
-    "packages/components"
+    "packages/components",
+    "examples/*"
   ],
   "scripts": {
-    "clean": "rimraf ./packages/*/dist",
+    "clean": "rimraf ./packages/*/dist packages/**/*.tsbuildinfo",
+    "compile": "tsc --build tsconfig.project.json",
     "build": "npm run clean && npm run build:packages && npm run build:components",
     "build:components": "cd packages/components && npm run build",
     "build:packages": "parcel build packages/arch packages/utils",
@@ -19,7 +21,8 @@
     "test:all": "npm run test --workspaces --if-present",
     "format": "prettier --write --ignore-path .gitignore .",
     "release": "multi-semantic-release --sequential-init",
-    "release:check": "multi-semantic-release --dry-run --sequential-init"
+    "release:check": "multi-semantic-release --dry-run --sequential-init",
+    "postinstall": "update-ts-references"
   },
   "devDependencies": {
     "@commitlint/cli": "13.1.0",
@@ -41,7 +44,8 @@
     "simple-git-hooks": "2.6.1",
     "ts-jest": "27.1.2",
     "ts-mockito": "2.6.1",
-    "typescript": "4.4.2"
+    "typescript": "4.4.2",
+    "update-ts-references": "2.4.1"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit",
@@ -50,5 +54,8 @@
   },
   "engines": {
     "node": "16.X"
+  },
+  "dependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.0.1"
   }
 }
