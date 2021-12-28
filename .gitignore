@@ -16,6 +16,7 @@ components.d.ts
 .sourcemaps/
 .tmp/
 .versions/
+.parcel-cache/
 coverage/
 www/
 node_modules/
