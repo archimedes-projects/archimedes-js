@@ -4,9 +4,11 @@
   "description": "Archimedes utils",
   "author": "<>",
   "license": "Apache-2.0",
+  "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.module.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "files": [
     "dist"
   ],

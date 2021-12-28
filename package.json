@@ -3,22 +3,21 @@
   "private": true,
   "license": "Apache-2.0",
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/arch",
+    "packages/utils"
   ],
   "scripts": {
     "clean": "rimraf ./packages/*/dist",
-    "build": "yarn run clean && yarn run build:components && yarn run build:packages",
-    "build:components": "lerna exec --scope @archimedes/components -- npm run build",
-    "build:packages": "lerna exec --scope @archimedes/arch --scope @archimedes/utils -- bili --config ../../bili.config.ts",
-    "compile": "lerna exec --scope @archimedes/arch --scope @archimedes/utils -- tsc --noEmit",
-    "test": "jest --coverage",
+    "build": "npm run clean && npm run build:packages && npm run build:components",
+    "build:components": "parcel build packages/components",
+    "build:packages": "parcel build packages/arch packages/utils",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:ci": "jest --ci",
+    "test:all": "npm run test --workspaces",
     "format": "prettier --write --ignore-path .gitignore .",
-    "version": "lerna version --conventional-commits --no-private --yes --exact",
-    "publish": "lerna publish from-package --yes --no-verify-access",
-    "bootstrap": "lerna bootstrap",
-    "postinstall": "yarn run bootstrap"
+    "#version": "lerna version --conventional-commits --no-private --yes --exact",
+    "#publish": "lerna publish from-package --yes --no-verify-access"
   },
   "devDependencies": {
     "@babel/core": "7.15.0",
@@ -26,20 +25,21 @@
     "@babel/preset-typescript": "7.15.0",
     "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "13.1.0",
+    "@parcel/packager-ts": "^2.0.1",
+    "@parcel/transformer-typescript-types": "^2.0.1",
     "@types/jest": "27.0.1",
     "babel-jest": "27.1.0",
-    "bili": "5.0.5",
     "isomorphic-fetch": "3.0.0",
     "jest": "27.1.0",
-    "lerna": "4.0.0",
+    "parcel": "2.0.1",
     "prettier": "2.3.2",
     "pretty-quick": "3.1.1",
     "rimraf": "3.0.2",
-    "rollup-plugin-typescript2": "0.30.0",
     "simple-git-hooks": "2.6.1",
     "ts-jest": "27.0.5",
     "ts-mockito": "2.6.1",
-    "typescript": "4.4.2"
+    "typescript": "4.4.2",
+    "es-babel-jest": "1.0.0"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit",

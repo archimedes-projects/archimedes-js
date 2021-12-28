@@ -10,14 +10,21 @@
 
 # Archimedes
 
-Archimedes is a series of architectural concepts that are implemented in different languages. Using a given Archimedes implementation provides a set of solid and flexible architectural pieces. This is the implementation of Archimedes in TypeScript.
+Archimedes is a series of architectural concepts that are implemented in different languages. Using a given Archimedes
+implementation provides a set of solid and flexible architectural pieces. This is the implementation of Archimedes in
+TypeScript.
 
 With `archimedes-js` you have:
 
--   [Use cases](https://www.archimedesfw.io/docs/js/arch#use-cases) to define your business logic
--   [Powerful runner](https://www.archimedesfw.io/docs/js/arch#runner) that handles [cache](https://www.archimedesfw.io/docs/js/arch#cachelink), [errors](https://www.archimedesfw.io/docs/js/arch#notificationlink), [logging](https://www.archimedesfw.io/docs/js/arch#loggerlink) and much more
--   Utilities like [date handling](https://www.archimedesfw.io/docs/js/utils#datetime), a lightweight [http client](https://www.archimedesfw.io/docs/js/utils#httpclient), [monads](https://www.archimedesfw.io/docs/js/utils#maybe), etc
--   [Headless component library](https://www.archimedesfw.io/docs/js/components) (WIP)
+- [Use cases](https://www.archimedesfw.io/docs/js/arch#use-cases) to define your business logic
+- [Powerful runner](https://www.archimedesfw.io/docs/js/arch#runner) that
+  handles [cache](https://www.archimedesfw.io/docs/js/arch#cachelink)
+  , [errors](https://www.archimedesfw.io/docs/js/arch#notificationlink)
+  , [logging](https://www.archimedesfw.io/docs/js/arch#loggerlink) and much more
+- Utilities like [date handling](https://www.archimedesfw.io/docs/js/utils#datetime), a
+  lightweight [http client](https://www.archimedesfw.io/docs/js/utils#httpclient)
+  , [monads](https://www.archimedesfw.io/docs/js/utils#maybe), etc
+- [Headless component library](https://www.archimedesfw.io/docs/js/components) (WIP)
 
 ## Installation
 
@@ -31,8 +38,8 @@ npm i @archimedes/components -SE
 
 ## Documentation
 
--   [Checkout the documentation](https://www.archimedesfw.io/)
--   [Checkout the examples](./examples)
+- [Checkout the documentation](https://www.archimedesfw.io/)
+- [Checkout the examples](./examples)
 
 ## Contributing
 
@@ -41,3 +48,27 @@ All contributions are welcome! You should read our [contributing guide](./CONTRI
 ### License
 
 [Apache](https://opensource.org/licenses/Apache-2.0).
+
+@example CmdA invalidates QryA, QryB and QryC
+
+```ts
+@InvalidateQueriesCache(QryC)
+@CacheKey('CmdA')
+class CmdA extends Command {
+constructor(private qryA: QryA) {}
+ }
+
+ @CacheKey('QryA')
+ class QryA extends Query {
+constructor(private qryB: QryB) {}
+ }
+
+ @CacheKey('QryB')
+ class QryB extends Query {
+constructor() {}
+ }
+
+ @CacheKey('QryC')
+ class QryC extends Query {
+constructor() {}
+ }
