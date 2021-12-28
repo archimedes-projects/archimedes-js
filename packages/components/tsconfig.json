@@ -4,7 +4,10 @@
   "include": ["src", "types/jsx.d.ts"],
   "compilerOptions": {
     "declaration": false,
-    "target": "es2017",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "module": "ESNext",
     "declarationDir": "./typings",
     "jsx": "react",
     "jsxFactory": "h"
