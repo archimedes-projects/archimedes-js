@@ -2,12 +2,14 @@
 
 Different utilities to use:
 
--   Maybe
--   HttpClient
--   Datetime
--   ExtendedError
--   IsPromise
--   Observer
+-   datetime
+-   extended-error
+-   http-client
+-   is-promise
+-   maybe
+-   observer
+-   range
+-   types
 
 ## Usage
 
