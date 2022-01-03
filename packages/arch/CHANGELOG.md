@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.1](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.1) (2022-01-03)
+
+### Features
+
+-   add archimedes facade ([5927841](https://github.com/archimedes-projects/archidemes-js/commit/5927841c9003ec80d8b38572ae8c24159f68961b))
+-   make cache more customizable ([7942e57](https://github.com/archimedes-projects/archidemes-js/commit/7942e57a05fd97b253dd8bd4539bd7d2b1b8e20b))
+-   use export type ([107c758](https://github.com/archimedes-projects/archidemes-js/commit/107c758c510edebfff4efe44c5e95fe26b9c7d55))
+
 ## [2.0.0-alpha.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.0) (2021-12-03)
 
 ### ⚠ BREAKING CHANGES

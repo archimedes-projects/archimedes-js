@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.1](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.1) (2022-01-03)
+
 ## [2.0.0-alpha.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.0) (2021-12-03)
 
 **Note:** Version bump only for package @archimedes/components
