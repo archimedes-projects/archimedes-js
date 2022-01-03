@@ -56,15 +56,23 @@ export class HttpClient {
     return this.sendRequest(url, { method: 'GET' }, httpParams)
   }
 
-  async post<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
+  async post<Body, Result = void>(
+    url: string,
+    body: Body,
+    httpParams?: HttpParams
+  ): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'POST', body: this.getParsedBody(body) }, httpParams)
   }
 
-  async put<Result, Body>(url: string, body: Body, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
+  async put<Body, Result = void>(
+    url: string,
+    body: Body,
+    httpParams?: HttpParams
+  ): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'PUT', body: this.getParsedBody(body) }, httpParams)
   }
 
-  async delete<Result>(url: string, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
+  async delete<Result = void>(url: string, httpParams?: HttpParams): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'DELETE' }, httpParams)
   }
 
