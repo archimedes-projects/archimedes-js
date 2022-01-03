@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.2](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.2) (2022-01-03)
+
+-   feat!: force breaking change ([980a4a1](https://github.com/archimedes-projects/archidemes-js/commit/980a4a1a672221df950dc41b820a0fb8e3ae47d5))
+
+### BREAKING CHANGES
+
+-   force breaking change
+
 # [2.0.0-alpha.1](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.1) (2022-01-03)
 
 ## [2.0.0-alpha.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.0) (2021-12-03)
