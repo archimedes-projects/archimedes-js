@@ -1,5 +1,7 @@
 # `@archimedes/components`
 
+Refer to the [official documentation here](https://www.archimedesfw.io/docs/js/components).
+
 ## Usage
 
 1. `npm i @archimedes/components -SE`

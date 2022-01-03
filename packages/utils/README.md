@@ -1,5 +1,7 @@
 # `@archimedes/utils`
 
+Refer to the [official documentation here](https://www.archimedesfw.io/docs/js/utils).
+
 Different utilities to use:
 
 -   datetime
