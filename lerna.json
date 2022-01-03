@@ -8,7 +8,6 @@
       "conventionalCommits": true
     },
     "version": {
-      "ignoreChanges": ["**/*.md"],
       "conventionalCommits": true
     }
   }
