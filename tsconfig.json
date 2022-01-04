@@ -4,7 +4,6 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "noEmit": true,
     "sourceMap": true,
     "module": "es2020",
     "target": "es2020",
