@@ -19,8 +19,8 @@
     "test:coverage": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
-    "release": "multi-semantic-release --sequential-init",
-    "release:check": "multi-semantic-release --dry-run --sequential-init",
+    "release": "multi-semantic-release --sequential-init --ignore-private-packages=true",
+    "release:check": "multi-semantic-release --dry-run --sequential-init --ignore-private-packages=true",
     "postinstall": "update-ts-references"
   },
   "dependencies": {
