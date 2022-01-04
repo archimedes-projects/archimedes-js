@@ -1,3 +1,13 @@
+# @archimedes/arch [1.0.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@1.0.0-beta.1...@archimedes/arch@1.0.0-beta.2) (2022-01-04)
+
+### Features
+
+-   force breaking change ([0364e32](https://github.com/archimedes-projects/archimedes-js/commit/0364e32987ea705bfe8b23ff95e0d3caff9d640e))
+
+### BREAKING CHANGES
+
+-   force breaking change
+
 # @archimedes/arch 1.0.0-beta.1 (2022-01-04)
 
 ### Features
