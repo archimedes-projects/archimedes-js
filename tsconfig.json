@@ -8,10 +8,7 @@
     "incremental": true,
     "module": "es2020",
     "target": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "esModuleInterop": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -25,9 +22,7 @@
     "emitDecoratorMetadata": true,
     "baseUrl": "src",
     "paths": {
-      "@archimedes/*": [
-        "./*/src"
-      ]
+      "@archimedes/*": ["./*/src"]
     }
   },
   "references": [

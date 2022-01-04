@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @archimedes/arch
 
-
-
-
-
 # [1.4.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0-beta.1...v1.4.0) (2021-09-16)
 
 **Note:** Version bump only for package @archimedes/arch

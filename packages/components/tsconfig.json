@@ -1,12 +1,7 @@
 {
   "extends": "../../tsconfig.json",
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "src",
-    "types/jsx.d.ts"
-  ],
+  "exclude": ["node_modules"],
+  "include": ["src", "types/jsx.d.ts"],
   "compilerOptions": {
     "target": "ESNext",
     "moduleResolution": "node",
