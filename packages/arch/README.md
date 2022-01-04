@@ -8,6 +8,7 @@ Different architectural pieces to use:
 -   Commands
 -   Runner
 -   Links
+-   Notifications
 
 ## Usage
 
