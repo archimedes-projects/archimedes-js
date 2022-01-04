@@ -1,5 +1,9 @@
 name: Publish
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+      - beta
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -9,30 +13,26 @@ jobs:
           fetch-depth: '0'
       - uses: actions/setup-node@v2
         with:
-          node-version: 16.8.0
+          node-version: '17.3.0'
           always-auth: true
           registry-url: 'https://registry.npmjs.org'
           scope: '@archimedes'
       - uses: actions/cache@v2
         with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Credentials
         run: |
           git config --global user.name 'archimedes-ci'
           git config --global user.email 'ci.archimedes.io@autentia.com'
       - name: Install
-        run: yarn install
-      - name: compile
-        run: yarn run build
-      - name: Version
-        run: yarn run compile
+        run: npm install
       - name: Build
-        run: yarn run version --conventional-graduate
-      - name: Publish
-        run: yarn run publish
+        run: npm run build
+      - name: Release
+        run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
