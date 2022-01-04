@@ -10,13 +10,20 @@
 
 # ArchimedesJS
 
-Archimedes is a series of architectural concepts that are implemented in different languages. Using a given Archimedes implementation provides a set of solid and flexible architectural pieces. This is the implementation of Archimedes in TypeScript.
+Archimedes is a series of architectural concepts that are implemented in different languages. Using a given Archimedes
+implementation provides a set of solid and flexible architectural pieces. This is the implementation of Archimedes in
+TypeScript.
 
 With `archimedes-js` you have:
 
 -   [Use cases](https://www.archimedesfw.io/docs/js/arch#use-cases) to define your business logic
--   [Powerful runner](https://www.archimedesfw.io/docs/js/arch#runner) that handles [cache](https://www.archimedesfw.io/docs/js/arch#cachelink), [errors](https://www.archimedesfw.io/docs/js/arch#notificationlink), [logging](https://www.archimedesfw.io/docs/js/arch#loggerlink) and much more
--   Utilities like [date handling](https://www.archimedesfw.io/docs/js/utils#datetime), a lightweight [http client](https://www.archimedesfw.io/docs/js/utils#httpclient), [monads](https://www.archimedesfw.io/docs/js/utils#maybe), etc
+-   [Powerful runner](https://www.archimedesfw.io/docs/js/arch#runner) that
+    handles [cache](https://www.archimedesfw.io/docs/js/arch#cachelink)
+    , [errors](https://www.archimedesfw.io/docs/js/arch#notificationlink)
+    , [logging](https://www.archimedesfw.io/docs/js/arch#loggerlink) and much more
+-   Utilities like [date handling](https://www.archimedesfw.io/docs/js/utils#datetime), a
+    lightweight [http client](https://www.archimedesfw.io/docs/js/utils#httpclient)
+    , [monads](https://www.archimedesfw.io/docs/js/utils#maybe), etc
 -   [Headless component library](https://www.archimedesfw.io/docs/js/components) (WIP)
 
 ## Installation

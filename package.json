@@ -3,47 +3,58 @@
   "private": true,
   "license": "Apache-2.0",
   "workspaces": [
-    "packages/*",
+    "packages/arch",
+    "packages/utils",
+    "packages/components",
     "examples/*"
   ],
   "scripts": {
-    "clean": "rimraf ./packages/*/dist",
-    "build": "yarn run clean && yarn run build:components && yarn run build:packages",
-    "build:components": "lerna exec --scope @archimedes/components -- npm run build",
-    "build:packages": "lerna exec --scope @archimedes/arch --scope @archimedes/utils -- bili --config ../../bili.config.ts",
-    "compile": "lerna exec --scope @archimedes/arch --scope @archimedes/utils -- tsc --noEmit",
-    "test": "jest --coverage",
+    "clean": "rimraf ./packages/*/dist packages/**/*.tsbuildinfo",
+    "compile": "tsc --build tsconfig.project.json",
+    "build": "npm run clean && npm run build:packages && npm run build:components",
+    "build:components": "cd packages/components && npm run build",
+    "build:packages": "parcel build packages/arch packages/utils",
+    "watch": "parcel watch packages/arch packages/utils",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:ci": "jest --ci",
     "format": "prettier --write --ignore-path .gitignore .",
-    "version": "lerna version --conventional-commits --no-private --yes --exact",
-    "publish": "lerna publish from-package --yes --no-verify-access",
-    "bootstrap": "lerna bootstrap",
-    "postinstall": "yarn run bootstrap"
+    "release": "multi-semantic-release --sequential-init",
+    "release:check": "multi-semantic-release --dry-run --sequential-init",
+    "postinstall": "update-ts-references"
+  },
+  "dependencies": {
+    "@parcel/transformer-typescript-tsc": "2.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.0",
-    "@babel/preset-env": "7.15.0",
-    "@babel/preset-typescript": "7.15.0",
     "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "13.1.0",
+    "@parcel/packager-ts": "2.0.1",
+    "@parcel/transformer-typescript-types": "2.0.1",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/commit-analyzer": "9.0.1",
+    "@semantic-release/git": "10.0.1",
     "@types/jest": "27.0.1",
-    "babel-jest": "27.1.0",
-    "bili": "5.0.5",
+    "es-babel-jest": "1.0.0",
     "isomorphic-fetch": "3.0.0",
-    "jest": "27.1.0",
-    "lerna": "4.0.0",
+    "jest": "27.4.5",
+    "multi-semantic-release": "2.11.0",
+    "parcel": "2.0.1",
     "prettier": "2.3.2",
     "pretty-quick": "3.1.1",
     "rimraf": "3.0.2",
-    "rollup-plugin-typescript2": "0.30.0",
     "simple-git-hooks": "2.6.1",
-    "ts-jest": "27.0.5",
+    "ts-jest": "27.1.2",
     "ts-mockito": "2.6.1",
-    "typescript": "4.4.2"
+    "typescript": "4.4.2",
+    "update-ts-references": "2.4.1"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit",
     "pre-commit": "npx pretty-quick --staged",
     "pre-push": "npm run test:ci"
+  },
+  "engines": {
+    "node": "17.3.0"
   }
 }

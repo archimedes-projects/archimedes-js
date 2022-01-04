@@ -3,26 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [2.0.0-alpha.3](https://github.com/archimedes-projects/archidemes-js/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2022-01-03)
-
-### Features
-
--   add links to the official documentation ([decbebb](https://github.com/archimedes-projects/archidemes-js/commit/decbebbf7d5b41896819d86d896293c165b54021))
-
-# [2.0.0-alpha.2](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.2) (2022-01-03)
-
--   feat!: force breaking change ([980a4a1](https://github.com/archimedes-projects/archidemes-js/commit/980a4a1a672221df950dc41b820a0fb8e3ae47d5))
-
-### BREAKING CHANGES
-
--   force breaking change
-
-# [2.0.0-alpha.1](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.1) (2022-01-03)
-
-## [2.0.0-alpha.0](https://github.com/archimedes-projects/archidemes-js/compare/v1.5.0...v2.0.0-alpha.0) (2021-12-03)
-
-**Note:** Version bump only for package @archimedes/components
-
 # [1.5.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0...v1.5.0) (2021-11-23)
 
 ### Features

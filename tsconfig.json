@@ -1,4 +1,45 @@
 {
-  "files": [],
-  "references": [{ "path": "packages/components" }, { "path": "packages/utils" }, { "path": "packages/arch" }]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "incremental": true,
+    "module": "es2020",
+    "target": "es2020",
+    "lib": ["es2020", "dom"],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "noImplicitReturns": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "src",
+    "paths": {
+      "@archimedes/*": ["./*/src"]
+    }
+  },
+  "references": [
+    {
+      "path": "packages/arch"
+    },
+    {
+      "path": "packages/utils"
+    },
+    {
+      "path": "packages/components"
+    },
+    {
+      "path": "examples/example-angular"
+    },
+    {
+      "path": "examples/example-react"
+    }
+  ]
 }
