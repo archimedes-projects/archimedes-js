@@ -4,23 +4,23 @@
 log.txt
 *.sublime-project
 *.sublime-workspace
-.vscode/
 npm-debug.log*
-builds/
-loader/
 tsconfig.tsbuildinfo
 components.d.ts
 
 .idea/
-.gradle/
+.vscode/
+
 .sourcemaps/
 .tmp/
 .versions/
 .parcel-cache/
 coverage/
+builds/
 www/
 node_modules/
 tmp/
+loader/
 temp/
 
 .DS_Store
