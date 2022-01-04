@@ -1,3 +1,35 @@
+# @archimedes/utils 1.0.0-beta.1 (2022-01-04)
+
+### Features
+
+-   add "as" method to duration to get a given duration in a time unit ([44d6786](https://github.com/archimedes-projects/archimedes-js/commit/44d67860caefc0c04f0f74b14ebedcbd2e9a202e))
+-   add default headers ([1ea6510](https://github.com/archimedes-projects/archimedes-js/commit/1ea651087c8259cbc889b4b6e54d97881d854cfd))
+-   add default type values ([9ffcb96](https://github.com/archimedes-projects/archimedes-js/commit/9ffcb96bdc4e8d6e54eb6a98b3cebd7e69a8cf4d))
+-   add difference method to get the difference between two dates ([a42dcc3](https://github.com/archimedes-projects/archimedes-js/commit/a42dcc3094e4d80f28aa445514b0c96fa52028c5))
+-   add documentation ([b7667d7](https://github.com/archimedes-projects/archimedes-js/commit/b7667d7b78942a27ba4316300a14057a499d7c1b))
+-   add links to the official documentation ([decbebb](https://github.com/archimedes-projects/archimedes-js/commit/decbebbf7d5b41896819d86d896293c165b54021))
+-   add options ([cddebdb](https://github.com/archimedes-projects/archimedes-js/commit/cddebdb4341a07baafc5bfaca6e61cddb8044526))
+-   add parcel 2 configuration ([c6a3d61](https://github.com/archimedes-projects/archimedes-js/commit/c6a3d6183a15affe71eed9e74b8bed380a031e90))
+-   create range function ([0c980b2](https://github.com/archimedes-projects/archimedes-js/commit/0c980b29b22b3165c148aaaa6a2bff031f2abc4d))
+-   fix typo ([1446e66](https://github.com/archimedes-projects/archimedes-js/commit/1446e666071dfb95f74a7f98ad87eca07b7652af))
+-   return result in the after hook ([4f29d99](https://github.com/archimedes-projects/archimedes-js/commit/4f29d99cb2c4916f31975230e8c98280ecd7d993))
+-   use bili and yarn to build ([0fdbccc](https://github.com/archimedes-projects/archimedes-js/commit/0fdbcccff1bb1704a1579531c798a1d398218a50))
+-   use export type ([107c758](https://github.com/archimedes-projects/archimedes-js/commit/107c758c510edebfff4efe44c5e95fe26b9c7d55))
+-   use request defaults ([901210e](https://github.com/archimedes-projects/archimedes-js/commit/901210e5fa3bf505c20da597302a90aec8daf02b))
+-   **arch:** add base url ([f2a2f0b](https://github.com/archimedes-projects/archimedes-js/commit/f2a2f0b55e0d56b498b93f411d203060ade9dfe9))
+
+-   feat!: force breaking change ([980a4a1](https://github.com/archimedes-projects/archimedes-js/commit/980a4a1a672221df950dc41b820a0fb8e3ae47d5))
+-   chore!: release version 1.0 ([2e189e4](https://github.com/archimedes-projects/archimedes-js/commit/2e189e4f24c216edb0cf1706003242d115bc0e64))
+
+### Bug Fixes
+
+-   remove window ([8aba18a](https://github.com/archimedes-projects/archimedes-js/commit/8aba18abfd1a864b9cae93f54935fe192da5acf1))
+
+### BREAKING CHANGES
+
+-   force breaking change
+-   release new version
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
