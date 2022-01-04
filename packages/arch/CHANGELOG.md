@@ -1,3 +1,38 @@
+# @archimedes/arch 1.0.0-beta.1 (2022-01-04)
+
+### Features
+
+-   add archimedes facade ([5927841](https://github.com/archimedes-projects/archimedes-js/commit/5927841c9003ec80d8b38572ae8c24159f68961b))
+-   add links to the official documentation ([decbebb](https://github.com/archimedes-projects/archimedes-js/commit/decbebbf7d5b41896819d86d896293c165b54021))
+-   add parcel 2 configuration ([c6a3d61](https://github.com/archimedes-projects/archimedes-js/commit/c6a3d6183a15affe71eed9e74b8bed380a031e90))
+-   add use cases subscriptions ([ae47e26](https://github.com/archimedes-projects/archimedes-js/commit/ae47e260255950c7f3272bec4e65389b744eccb1))
+-   make cache more customizable ([7942e57](https://github.com/archimedes-projects/archimedes-js/commit/7942e57a05fd97b253dd8bd4539bd7d2b1b8e20b))
+-   pass result, param and executionOptions to subscribe callback ([a6f46a7](https://github.com/archimedes-projects/archimedes-js/commit/a6f46a754fa70661e40046d80974f2b5f155eb3b))
+-   use bili and yarn to build ([0fdbccc](https://github.com/archimedes-projects/archimedes-js/commit/0fdbcccff1bb1704a1579531c798a1d398218a50))
+-   use export type ([107c758](https://github.com/archimedes-projects/archimedes-js/commit/107c758c510edebfff4efe44c5e95fe26b9c7d55))
+-   use type exports ([9e0e473](https://github.com/archimedes-projects/archimedes-js/commit/9e0e473e49f8c95afa958ab050a76322efb1ecaa))
+
+-   feat!: force breaking change ([980a4a1](https://github.com/archimedes-projects/archimedes-js/commit/980a4a1a672221df950dc41b820a0fb8e3ae47d5))
+-   chore!: release version 1.0 ([2e189e4](https://github.com/archimedes-projects/archimedes-js/commit/2e189e4f24c216edb0cf1706003242d115bc0e64))
+
+### Bug Fixes
+
+-   add missing runner exports ([0dff355](https://github.com/archimedes-projects/archimedes-js/commit/0dff355265d60a01e6745569ef85f9ea751b6945))
+-   add object formatting ([4307dd7](https://github.com/archimedes-projects/archimedes-js/commit/4307dd766b193be0479638d0e6eba30437bd91d5))
+-   check publish script ([1540579](https://github.com/archimedes-projects/archimedes-js/commit/1540579717dd7de773cb52d2969e2d6d5c4e3fca))
+-   don't cache commands ([67eeb84](https://github.com/archimedes-projects/archimedes-js/commit/67eeb84a89f57dc89a019ef7327fa6d7d5eef950))
+-   export execution options ([0b46d3a](https://github.com/archimedes-projects/archimedes-js/commit/0b46d3abc573c1a94ce739a13816bffd7b84fb62))
+-   make execution options optional ([06aea77](https://github.com/archimedes-projects/archimedes-js/commit/06aea778252f785d8bc67ad52eb5634b49d3fd69))
+
+### BREAKING CHANGES
+
+-   force breaking change
+-   release new version
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 1.0.0-beta.1
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
