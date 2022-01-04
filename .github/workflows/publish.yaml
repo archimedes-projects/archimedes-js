@@ -28,7 +28,7 @@ jobs:
           git config --global user.name 'archimedes-ci'
           git config --global user.email 'ci.archimedes.io@autentia.com'
       - name: Install
-        run: npm install
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Release
