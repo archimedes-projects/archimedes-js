@@ -10,6 +10,6 @@ Different architectural pieces to use:
 -   Links
 -   Notifications
 
-## Usage
+## Installation
 
 `npm i @archimedes/arch -SE`

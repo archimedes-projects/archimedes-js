@@ -13,6 +13,6 @@ Different utilities to use:
 -   range
 -   types
 
-## Usage
+## Installation
 
 `npm i @archimedes/utils -SE`
