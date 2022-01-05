@@ -1,3 +1,17 @@
+# @archimedes/arch [1.0.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@1.0.0-beta.2...@archimedes/arch@1.0.0-beta.3) (2022-01-05)
+
+### Features
+
+-   force breaking change ([2f50d1b](https://github.com/archimedes-projects/archimedes-js/commit/2f50d1b29b765378610d5b978bb1fc11a174453c))
+
+### BREAKING CHANGES
+
+-   force breaking change
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 1.0.0-beta.2
+
 # @archimedes/arch [1.0.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@1.0.0-beta.1...@archimedes/arch@1.0.0-beta.2) (2022-01-04)
 
 ### Features
