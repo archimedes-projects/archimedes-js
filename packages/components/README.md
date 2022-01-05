@@ -1,6 +1,6 @@
 # `@archimedes/components`
 
-Refer to the [official documentation here](https://www.archimedesfw.io/docs/js/components).
+Refer to [the official documentation here](https://www.archimedesfw.io/docs/js/components).
 
 ## Installation
 
