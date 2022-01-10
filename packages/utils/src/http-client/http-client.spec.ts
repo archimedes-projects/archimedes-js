@@ -116,7 +116,15 @@ describe('HttpClient', () => {
 
 function setup<T>(options?: HttpClientCreateOptions & Partial<{ result: T }>) {
   const fetchMock = jest.fn()
-  fetchMock.mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(options?.result), ok: true }))
+  fetchMock.mockImplementation(() =>
+    Promise.resolve({
+      json: () => {
+        return Promise.resolve(options?.result)
+      },
+      ok: true,
+      headers: new Headers()
+    })
+  )
   window.fetch = fetchMock
 
   return {
