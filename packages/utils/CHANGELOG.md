@@ -1,3 +1,25 @@
+# @archimedes/utils [2.0.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@1.0.0...@archimedes/utils@2.0.0-beta.1) (2022-01-05)
+
+### Features
+
+-   add default type values ([9ffcb96](https://github.com/archimedes-projects/archimedes-js/commit/9ffcb96bdc4e8d6e54eb6a98b3cebd7e69a8cf4d))
+-   add documentation ([b7667d7](https://github.com/archimedes-projects/archimedes-js/commit/b7667d7b78942a27ba4316300a14057a499d7c1b))
+-   add links to the official documentation ([decbebb](https://github.com/archimedes-projects/archimedes-js/commit/decbebbf7d5b41896819d86d896293c165b54021))
+-   add options ([cddebdb](https://github.com/archimedes-projects/archimedes-js/commit/cddebdb4341a07baafc5bfaca6e61cddb8044526))
+-   add parcel 2 configuration ([c6a3d61](https://github.com/archimedes-projects/archimedes-js/commit/c6a3d6183a15affe71eed9e74b8bed380a031e90))
+-   fix typo ([1446e66](https://github.com/archimedes-projects/archimedes-js/commit/1446e666071dfb95f74a7f98ad87eca07b7652af))
+-   force breaking change ([eaa774e](https://github.com/archimedes-projects/archimedes-js/commit/eaa774ea427be406071db5ddf544eabc87064c89))
+-   force breaking change ([2f50d1b](https://github.com/archimedes-projects/archimedes-js/commit/2f50d1b29b765378610d5b978bb1fc11a174453c))
+-   use export type ([107c758](https://github.com/archimedes-projects/archimedes-js/commit/107c758c510edebfff4efe44c5e95fe26b9c7d55))
+
+-   feat!: force breaking change ([980a4a1](https://github.com/archimedes-projects/archimedes-js/commit/980a4a1a672221df950dc41b820a0fb8e3ae47d5))
+
+### BREAKING CHANGES
+
+-   force breaking change
+-   force breaking change
+-   force breaking change
+
 # @archimedes/utils [1.0.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@1.0.0-beta.1...@archimedes/utils@1.0.0-beta.2) (2022-01-05)
 
 ### Features
