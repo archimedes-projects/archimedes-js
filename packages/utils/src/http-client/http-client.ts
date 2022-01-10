@@ -7,12 +7,13 @@ type Url = string
 export interface HttpClientResponse<Result> {
   result: Result
   status: HttpStatusCode
-  headers: Headers
+  headers: HttpClientHeaders
   options: RequestInit
 }
 
 export type HttpClientBeforeHook = (request: Request, options: HttpClientOptions) => void
 export type HttpClientAfterHook = (response: Response & { result: unknown }, options: HttpClientOptions) => void
+export type HttpClientHeaders = Record<string, string | number | boolean>
 
 export interface HttpClientOptions {
   baseUrl: Url
@@ -58,7 +59,7 @@ export class HttpClient {
 
   async post<Body, Result = void>(
     url: string,
-    body: Body,
+    body?: Body,
     httpParams?: HttpParams
   ): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'POST', body: this.getParsedBody(body) }, httpParams)
@@ -66,7 +67,7 @@ export class HttpClient {
 
   async put<Body, Result = void>(
     url: string,
-    body: Body,
+    body?: Body,
     httpParams?: HttpParams
   ): Promise<HttpClientResponse<Result>> {
     return this.sendRequest(url, { method: 'PUT', body: this.getParsedBody(body) }, httpParams)
@@ -110,7 +111,14 @@ export class HttpClient {
     if (!response.ok) {
       throw new HttpError({ name: response.status.toString(), message: response.statusText })
     }
+
+    const headers: HttpClientHeaders = {}
+
+    response.headers.forEach((value, key) => {
+      headers[key] = value
+    })
+
     const json = await response.json()
-    return { result: json as Result, headers: response.headers, options, status: response.status }
+    return { result: json as Result, headers, options, status: response.status }
   }
 }
