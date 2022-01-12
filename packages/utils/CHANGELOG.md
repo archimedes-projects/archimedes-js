@@ -1,3 +1,9 @@
+# @archimedes/utils [2.0.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.0.0-beta.1...@archimedes/utils@2.0.0-beta.2) (2022-01-10)
+
+### Features
+
+-   make body optional in put and post ([1674c2a](https://github.com/archimedes-projects/archimedes-js/commit/1674c2a0e8a19f2583b50bfb64f5cd2af8b85198))
+
 # @archimedes/utils [2.0.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@1.0.0...@archimedes/utils@2.0.0-beta.1) (2022-01-05)
 
 ### Features
