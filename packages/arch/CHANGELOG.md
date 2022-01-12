@@ -1,3 +1,9 @@
+# @archimedes/arch [2.0.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.2...@archimedes/arch@2.0.0-beta.3) (2022-01-12)
+
+### Features
+
+-   remove window from setTimeout ([7cbab4d](https://github.com/archimedes-projects/archimedes-js/commit/7cbab4d4a9b5e55c2e3562c6dbbe10f4d95ffba5))
+
 # @archimedes/arch [2.0.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.1...@archimedes/arch@2.0.0-beta.2) (2022-01-10)
 
 ### Dependencies
