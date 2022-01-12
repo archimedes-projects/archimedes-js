@@ -1,9 +1,17 @@
 import { Subject, Observer } from '@archimedes/utils'
 import { Notification } from './notification'
+import { NotificationCenterOptions } from './notification-center-options'
 
 export class NotificationCenter implements Subject {
   observers: Observer[] = []
   notifications: Notification[] = []
+  notificationCenterOptions: NotificationCenterOptions
+
+  constructor(notificationOptions?: Partial<NotificationCenterOptions>) {
+    this.notificationCenterOptions = {
+      notificationTimeout: notificationOptions?.notificationTimeout ?? 5_000
+    }
+  }
 
   new(notification: Notification) {
     this.notifications.push(notification)
@@ -11,7 +19,7 @@ export class NotificationCenter implements Subject {
     setTimeout(() => {
       this.notifications.pop()
       this.publish()
-    }, 5_000)
+    }, this.notificationCenterOptions.notificationTimeout)
   }
 
   publish() {
