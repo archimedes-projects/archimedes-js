@@ -8,7 +8,7 @@ export class NotificationCenter implements Subject {
   new(notification: Notification) {
     this.notifications.push(notification)
     this.publish()
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.notifications.pop()
       this.publish()
     }, 5_000)
