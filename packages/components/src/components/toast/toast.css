@@ -16,12 +16,12 @@
 }
 
 .info {
-  --toast-color: var(--info-color);
+  --toast-color: var(--on-info-color);
   --toast-background-color: var(--info-color);
 }
 
 .success {
-  --toast-color: var(--success-color);
+  --toast-color: var(--on-success-color);
   --toast-background-color: var(--success-color);
 }
 
