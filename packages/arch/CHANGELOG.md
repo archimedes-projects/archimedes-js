@@ -1,3 +1,9 @@
+# @archimedes/arch [2.0.0-beta.4](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.3...@archimedes/arch@2.0.0-beta.4) (2022-01-19)
+
+### Features
+
+-   added notification center options to change the default notification timeout ([ba4b28b](https://github.com/archimedes-projects/archimedes-js/commit/ba4b28b3fbcfa0b07e78672815d2b02544c9df6b))
+
 # @archimedes/arch [2.0.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.2...@archimedes/arch@2.0.0-beta.3) (2022-01-12)
 
 ### Features
