@@ -1,3 +1,9 @@
+# @archimedes/components [1.0.0-beta.5](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/components@1.0.0-beta.4...@archimedes/components@1.0.0-beta.5) (2022-01-19)
+
+### Bug Fixes
+
+-   toast component has the right color property for the success and info styles ([205390a](https://github.com/archimedes-projects/archimedes-js/commit/205390a84000b025ad01864ed6a32ac8838a3152))
+
 # @archimedes/components [1.0.0-beta.4](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/components@1.0.0-beta.3...@archimedes/components@1.0.0-beta.4) (2022-01-10)
 
 ### Dependencies
