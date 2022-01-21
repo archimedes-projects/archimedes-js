@@ -1,3 +1,21 @@
+# @archimedes/arch [2.0.0-beta.8](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.7...@archimedes/arch@2.0.0-beta.8) (2022-01-21)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
+# @archimedes/arch [2.0.0-beta.7](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.6...@archimedes/arch@2.0.0-beta.7) (2022-01-21)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
+# @archimedes/arch [2.0.0-beta.6](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.5...@archimedes/arch@2.0.0-beta.6) (2022-01-21)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
 # @archimedes/arch [2.0.0-beta.5](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.4...@archimedes/arch@2.0.0-beta.5) (2022-01-21)
 
 ### Features
