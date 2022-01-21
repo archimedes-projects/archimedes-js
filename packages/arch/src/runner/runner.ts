@@ -7,9 +7,13 @@ import { NullLink } from './links/null-link'
 export class Runner {
   private static chain: Link = new NullLink()
 
-  static run(useCase: UseCase<unknown, unknown>, executionOptions: ExecutionOptions, param?: unknown): unknown {
+  static async run(
+    useCase: UseCase<unknown, unknown>,
+    executionOptions: ExecutionOptions,
+    param?: unknown
+  ): Promise<unknown> {
     const context = Context.create({ useCase, param, executionOptions })
-    this.chain.next(context)
+    await this.chain.next(context)
     return context.result
   }
 

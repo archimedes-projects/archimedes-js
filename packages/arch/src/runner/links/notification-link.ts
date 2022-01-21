@@ -7,7 +7,7 @@ export class NotificationLink extends BaseLink {
     super()
   }
 
-  next(context: Context): void {
+  async next(context: Context): Promise<void> {
     context.result = context.result?.catch(e => {
       if (!context.executionOptions.inlineError) {
         this.notificationCenter.new({ message: e.error?.message ?? 'Error' })
@@ -15,6 +15,7 @@ export class NotificationLink extends BaseLink {
       console.error(e)
       throw e
     })
-    this.nextLink.next(context)
+    await this.nextLink.next(context)
+    return
   }
 }

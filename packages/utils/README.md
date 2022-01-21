@@ -1,14 +1,18 @@
 # `@archimedes/utils`
 
+Refer to [the official documentation here](https://www.archimedesfw.io/docs/js/utils).
+
 Different utilities to use:
 
--   Maybe
--   HttpClient
--   Datetime
--   ExtendedError
--   IsPromise
--   Observer
+-   datetime
+-   extended-error
+-   http-client
+-   is-promise
+-   maybe
+-   observer
+-   range
+-   types
 
-## Usage
+## Installation
 
 `npm i @archimedes/utils -SE`

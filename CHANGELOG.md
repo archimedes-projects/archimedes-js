@@ -5,17 +5,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.5.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0...v1.5.0) (2021-11-23)
 
-
 ### Features
 
-* add button tests ([2811db2](https://github.com/archimedes-projects/archimedes-js/commit/2811db253cb20c6623ab057b8636238d6da3c2bf))
-* create button component ([6d8e2c8](https://github.com/archimedes-projects/archimedes-js/commit/6d8e2c8e8fd2758e8d415164d66d98f489a2b7a2))
-* refactor button component ([b391434](https://github.com/archimedes-projects/archimedes-js/commit/b391434edc3120e53756778c77577e2810354bf9))
-* return result in the after hook ([4f29d99](https://github.com/archimedes-projects/archimedes-js/commit/4f29d99cb2c4916f31975230e8c98280ecd7d993))
-
-
-
-
+-   add button tests ([2811db2](https://github.com/archimedes-projects/archimedes-js/commit/2811db253cb20c6623ab057b8636238d6da3c2bf))
+-   create button component ([6d8e2c8](https://github.com/archimedes-projects/archimedes-js/commit/6d8e2c8e8fd2758e8d415164d66d98f489a2b7a2))
+-   refactor button component ([b391434](https://github.com/archimedes-projects/archimedes-js/commit/b391434edc3120e53756778c77577e2810354bf9))
+-   return result in the after hook ([4f29d99](https://github.com/archimedes-projects/archimedes-js/commit/4f29d99cb2c4916f31975230e8c98280ecd7d993))
 
 # [1.4.0](https://github.com/archimedes-projects/archimedes-js/compare/v1.4.0-beta.1...v1.4.0) (2021-09-16)
 

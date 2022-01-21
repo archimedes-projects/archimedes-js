@@ -25,7 +25,7 @@ describe.skip('NotificationLink', () => {
       })
       context.result = mockUseCase.internalExecute()
 
-      notificationLink.next(instance(context))
+      await notificationLink.next(instance(context))
       await context.result
     } catch (e) {
       expect(e).toEqual({
@@ -55,7 +55,7 @@ describe.skip('NotificationLink', () => {
 
     context.result = mockUseCase.internalExecute()
     try {
-      notificationLink.next(instance(context))
+      await notificationLink.next(instance(context))
       await context.result
     } catch (e) {
       verify(link.next(deepEqual(context))).once()
@@ -82,7 +82,7 @@ describe.skip('NotificationLink', () => {
 
     context.result = mockUseCase.internalExecute()
     try {
-      notificationLink.next(instance(context))
+      await notificationLink.next(instance(context))
       await context.result
     } catch (e) {
       verify(link.next(deepEqual(context))).never()

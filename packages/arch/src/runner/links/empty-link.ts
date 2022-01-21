@@ -6,5 +6,5 @@ export class EmptyLink implements Link {
     return this
   }
 
-  next(_context: Context) {}
+  async next(_context: Context) {}
 }

@@ -3,13 +3,13 @@ import { Link } from './links/link'
 import { anything, instance, mock, verify } from 'ts-mockito'
 import { UseCase } from '../use-case/use-case'
 
-describe.skip('Runner', () => {
-  it('should run the runner', () => {
+describe('Runner', () => {
+  it('should run the runner', async () => {
     const link = mock<Link>()
-    Runner.createChain([link])
+    Runner.createChain([instance(link)])
     const useCase = mock<UseCase<unknown, unknown>>()
 
-    Runner.run(instance(useCase), { inlineError: false })
+    await Runner.run(instance(useCase), { inlineError: false })
 
     verify(link.next(anything())).once()
   })

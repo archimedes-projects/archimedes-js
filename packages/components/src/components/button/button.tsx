@@ -1,6 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core'
-
-type Theme = 'primary' | 'secondary'
+import { Theme } from '../../utils/theme'
 
 @Component({
   tag: 'arch-button',
