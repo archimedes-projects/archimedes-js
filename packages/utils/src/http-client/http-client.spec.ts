@@ -112,15 +112,28 @@ describe('HttpClient', () => {
       defaults: undefined
     })
   })
+
+  it('should handle empty responses', async () => {
+    const { httpClient } = setup({ result: '' })
+
+    const response = await httpClient.get('http://foo')
+
+    expect(response).toEqual({
+      headers: {},
+      options: {
+        method: 'GET'
+      },
+      result: '',
+      status: undefined
+    })
+  })
 })
 
 function setup<T>(options?: HttpClientCreateOptions & Partial<{ result: T }>) {
   const fetchMock = jest.fn()
   fetchMock.mockImplementation(() =>
     Promise.resolve({
-      json: () => {
-        return Promise.resolve(options?.result)
-      },
+      text: () => Promise.resolve(JSON.stringify(options?.result ?? { foo: 'bar' })),
       ok: true,
       headers: new Headers()
     })

@@ -85,9 +85,10 @@ export class HttpClient {
     const request = this.getRequest(url, httpParams)
     this.options.hooks.before.forEach(hook => hook(request, this.options))
     const response = await fetch(request, { ...this.options.defaults, ...options })
-    const result = await response.json()
+    const resultAsString = await response.text()
+    const result = resultAsString.length !== 0 ? JSON.parse(resultAsString) : undefined
     this.options.hooks.after.forEach(hook => hook({ ...response, result }, this.options))
-    return this.getResponse(response, options)
+    return this.getResponse(response, result, options)
   }
 
   private getRequest(url: string, httpParams: HttpParams | undefined) {
@@ -107,7 +108,11 @@ export class HttpClient {
     return JSON.stringify(body)
   }
 
-  private async getResponse<Result>(response: Response, options: RequestInit): Promise<HttpClientResponse<Result>> {
+  private async getResponse<Result>(
+    response: Response,
+    result: Result,
+    options: RequestInit
+  ): Promise<HttpClientResponse<Result>> {
     if (!response.ok) {
       throw new HttpError({ name: response.status.toString(), message: response.statusText })
     }
@@ -118,7 +123,6 @@ export class HttpClient {
       headers[key] = value
     })
 
-    const json = await response.json()
-    return { result: json as Result, headers, options, status: response.status }
+    return { result: result as Result, headers, options, status: response.status }
   }
 }
