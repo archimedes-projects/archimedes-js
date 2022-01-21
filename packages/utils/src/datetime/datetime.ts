@@ -4,6 +4,10 @@ import { Duration } from './duration'
 import { StringUnitLength } from './string-unit-length'
 import { InfoOptions } from './info-options'
 
+export interface DatetimeOptions {
+  isLocal: boolean
+}
+
 export class Datetime {
   static now(): Datetime {
     return new Datetime(LuxonDatetime.local().setZone('utc'))
@@ -63,8 +67,13 @@ export class Datetime {
     return new Datetime(LuxonDatetime.fromISO(isoString))
   }
 
-  static fromJsDate(date: Date) {
-    return new Datetime(LuxonDatetime.fromJSDate(date))
+  /**
+   * Create from a JavaScript {Date} object
+   * @param date
+   * @param options
+   */
+  static fromJsDate(date: Date, options?: DatetimeOptions) {
+    return new Datetime(LuxonDatetime.fromJSDate(date), options)
   }
 
   /**
@@ -85,8 +94,8 @@ export class Datetime {
     return Info.weekdays(length, options)
   }
 
-  constructor(private readonly _value: LuxonDatetime, isLocal: boolean = false) {
-    if (isLocal) {
+  constructor(private readonly _value: LuxonDatetime, options: DatetimeOptions = { isLocal: false }) {
+    if (options.isLocal) {
       this._value = _value
     } else {
       this._value = this._value.setZone('utc')
@@ -168,7 +177,7 @@ export class Datetime {
   }
 
   toLocal(): Datetime {
-    return new Datetime(this._value.toLocal(), true)
+    return new Datetime(this._value.toLocal(), { isLocal: true })
   }
 
   toMillis(): number {
@@ -176,7 +185,7 @@ export class Datetime {
   }
 
   asLocal() {
-    return new Datetime(this._value.setZone('local', { keepLocalTime: true }), true)
+    return new Datetime(this._value.setZone('local', { keepLocalTime: true }), { isLocal: true })
   }
 
   isValid() {

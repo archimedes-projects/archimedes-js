@@ -8,7 +8,7 @@ export class LoggerLink extends BaseLink {
     super()
   }
 
-  next(context: Context): void {
+  async next(context: Context): Promise<void> {
     context.result = context.result?.then(x => {
       this.logger.log(
         `[${Datetime.now().toIso()}] ${context.useCase.constructor.name} / Params: ${

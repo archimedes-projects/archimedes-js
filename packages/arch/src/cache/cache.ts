@@ -1,8 +1,15 @@
 import { CacheKey } from './cache-key'
 
-export interface Cache<T> {
-  get(key: CacheKey): T | undefined
-  set(key: CacheKey, value: T): void
+type Milliseconds = number
+
+export interface CacheResult<T = unknown> {
+  createdAt: Milliseconds
+  returns: T
+}
+
+export interface Cache<T = unknown> {
+  get(key: CacheKey): CacheResult<T> | undefined
+  set(key: CacheKey, value: CacheResult<T>): void
   has(key: CacheKey): boolean
   delete(key: CacheKey): void
   clear(): void

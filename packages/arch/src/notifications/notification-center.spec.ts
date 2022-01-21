@@ -43,4 +43,22 @@ describe('NotificationCenter', () => {
 
     expect(count).toBe(1)
   })
+
+  it('should set new timeout', () => {
+    const notificationTimeout = 10_000
+    const notificationCenter = new NotificationCenter({ notificationTimeout })
+
+    expect(notificationCenter.notificationCenterOptions.notificationTimeout).toBe(notificationTimeout)
+  })
+
+  it('should use the timeout configured when setTimeout is called', () => {
+    const notificationTimeout = 10_000
+    const notificationCenter = new NotificationCenter({ notificationTimeout })
+    jest.spyOn(global, 'setTimeout')
+
+    notificationCenter.new({ message: 'foo' })
+
+    expect(setTimeout).toHaveBeenCalledTimes(1)
+    expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), notificationTimeout)
+  })
 })

@@ -1,30 +1,38 @@
-import { LruCache } from './lru-cache'
 import { Cache } from './cache'
 import { CacheKey } from './cache-key'
 import { Md5 } from 'ts-md5'
 import { Datetime, isPromise } from '@archimedes/utils'
+import { CacheOptions } from './cache-options'
+import { LruCache } from './lru-cache'
 
 export class CacheManager {
-  private caches: Map<CacheKey, Cache<any>> = new Map()
+  private caches: Map<CacheKey, Cache> = new Map()
 
-  private readonly ttl = 500_000
+  private readonly cacheOptions: CacheOptions
 
-  isCached(cacheKey: CacheKey, args: unknown[]): boolean {
+  constructor(cacheOptions?: Partial<CacheOptions>) {
+    this.cacheOptions = {
+      ttl: cacheOptions?.ttl ?? 500_000,
+      cache: cacheOptions?.cache ?? new LruCache()
+    }
+  }
+
+  has(cacheKey: CacheKey, args: unknown[]): boolean {
     const existingCache = this.caches.get(cacheKey)
     const hash = this.getHash(args)
     return existingCache?.has(hash) ?? false
   }
 
-  cache(cacheKey: CacheKey, fn: (...fnArgs: unknown[]) => unknown, ...args: any[]) {
+  set(cacheKey: CacheKey, fn: (...fnArgs: unknown[]) => unknown, ...args: any[]): unknown {
     if (!this.caches.has(cacheKey)) {
-      this.caches.set(cacheKey, new LruCache())
+      this.caches.set(cacheKey, this.cacheOptions.cache)
     }
 
     const existingCache = this.caches.get(cacheKey)!
     const hash = this.getHash(args)
     const now = Datetime.now()
 
-    if (!this.isCached(cacheKey, args)) {
+    if (!this.has(cacheKey, args)) {
       existingCache.set(hash, { createdAt: now.toMillis(), returns: fn.apply(this, args) })
     }
 
@@ -36,22 +44,22 @@ export class CacheManager {
       })
     }
 
-    if (now.toMillis() - existingResult.createdAt > this.ttl) {
+    if (now.toMillis() - existingResult.createdAt > this.cacheOptions.ttl) {
       existingCache.delete(hash)
     }
 
     return existingResult.returns
   }
 
-  invalidateCache(cacheKey: CacheKey) {
+  invalidate(cacheKey: CacheKey): void {
     this.caches.delete(cacheKey)
   }
 
-  invalidateCaches() {
+  invalidateAll(): void {
     this.caches.clear()
   }
 
-  private getHash(args: unknown[]) {
+  private getHash(args: unknown[]): string {
     return new Md5().appendStr(JSON.stringify(args)).end() as string
   }
 }

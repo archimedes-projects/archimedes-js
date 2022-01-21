@@ -10,15 +10,15 @@ export class CacheLink extends BaseLink {
     super()
   }
 
-  next(context: Context): void {
+  async next(context: Context): Promise<void> {
     const name = context.useCase.constructor.name
 
-    if (!this.cacheManager.isCached(name, [context.param])) {
+    if (!this.cacheManager.has(name, [context.param])) {
       this.nextLink.next(context)
     }
 
     context.result = context.useCase.readonly
-      ? this.cacheManager.cache(name, () => context.result, context.param)
+      ? (this.cacheManager.set(name, () => context.result, context.param) as Promise<unknown>)
       : context.result
 
     this.invalidateCache(name)
@@ -28,13 +28,13 @@ export class CacheLink extends BaseLink {
     CacheInvalidations.invalidations.get(cacheKey)?.forEach(invalidation => {
       switch (invalidation) {
         case InvalidationPolicy.NO_CACHE:
-          this.cacheManager.invalidateCache(cacheKey)
+          this.cacheManager.invalidate(cacheKey)
           break
         case InvalidationPolicy.ALL:
-          this.cacheManager.invalidateCaches()
+          this.cacheManager.invalidateAll()
           break
         default:
-          this.cacheManager.invalidateCache(invalidation)
+          this.cacheManager.invalidate(invalidation)
           if (CacheInvalidations.invalidations.has(invalidation)) {
             this.invalidateCache(invalidation)
           }

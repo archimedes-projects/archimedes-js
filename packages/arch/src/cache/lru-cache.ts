@@ -1,15 +1,15 @@
-import { Cache } from './cache'
+import { Cache, CacheResult } from './cache'
 import lru, { Lru } from 'tiny-lru'
 import { CacheKey } from './cache-key'
 
 export class LruCache<T> implements Cache<T> {
-  private _lru: Lru<T> = lru(100)
+  private _lru: Lru<CacheResult<T>> = lru(100)
 
-  get(key: CacheKey): T | undefined {
+  get(key: CacheKey): CacheResult<T> | undefined {
     return this._lru.get(key)
   }
 
-  set(key: CacheKey, value: T) {
+  set(key: CacheKey, value: CacheResult<T>) {
     this._lru.set(key, value)
   }
 
