@@ -7,7 +7,8 @@ import { ActivatedItemHandler } from './activated-item-handler'
   shadow: true
 })
 export class ActivatedItemListener {
-  @Prop() handler!: ActivatedItemHandler
+  @Prop()
+  handler!: ActivatedItemHandler
 
   @Listen('activatedItem')
   protected activatedItemHandler(event: CustomEvent<ItemPosition>) {
