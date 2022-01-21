@@ -1,3 +1,17 @@
+# @archimedes/arch [2.0.0-beta.5](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.4...@archimedes/arch@2.0.0-beta.5) (2022-01-21)
+
+### Features
+
+-   rename evict cache to invalidate cache ([4874aee](https://github.com/archimedes-projects/archimedes-js/commit/4874aee2dffdec8b393d7c258f01cac6a82ee9c6))
+
+### BREAKING CHANGES
+
+-   rename evict cache to invalidate cache
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
 # @archimedes/arch [2.0.0-beta.4](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.3...@archimedes/arch@2.0.0-beta.4) (2022-01-19)
 
 ### Features

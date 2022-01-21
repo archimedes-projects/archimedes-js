@@ -1,6 +1,6 @@
 {
   "name": "@archimedes/arch",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "description": "Archimedes architecture",
   "author": "<>",
   "license": "Apache-2.0",
@@ -15,7 +15,7 @@
     "typescript": "4.5.4"
   },
   "dependencies": {
-    "@archimedes/utils": "2.0.0-beta.2",
+    "@archimedes/utils": "2.0.0-beta.3",
     "reflect-metadata": "0.1.13",
     "tiny-lru": "7.0.6",
     "ts-md5": "1.2.10"
