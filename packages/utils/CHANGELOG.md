@@ -1,3 +1,9 @@
+# @archimedes/utils [2.0.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.0.0-beta.2...@archimedes/utils@2.0.0-beta.3) (2022-01-21)
+
+### Features
+
+-   handle empty response ([e9a0da5](https://github.com/archimedes-projects/archimedes-js/commit/e9a0da5d626fc3a371ae209773c3eea5f9cd2c3e))
+
 # @archimedes/utils [2.0.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.0.0-beta.1...@archimedes/utils@2.0.0-beta.2) (2022-01-10)
 
 ### Features
