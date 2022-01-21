@@ -1,3 +1,51 @@
+# @archimedes/arch [2.0.0](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@1.0.0...@archimedes/arch@2.0.0) (2022-01-21)
+
+### Features
+
+-   add archimedes facade ([5927841](https://github.com/archimedes-projects/archimedes-js/commit/5927841c9003ec80d8b38572ae8c24159f68961b))
+-   add links to the official documentation ([decbebb](https://github.com/archimedes-projects/archimedes-js/commit/decbebbf7d5b41896819d86d896293c165b54021))
+-   add parcel 2 configuration ([c6a3d61](https://github.com/archimedes-projects/archimedes-js/commit/c6a3d6183a15affe71eed9e74b8bed380a031e90))
+-   added notification center options to change the default notification timeout ([ba4b28b](https://github.com/archimedes-projects/archimedes-js/commit/ba4b28b3fbcfa0b07e78672815d2b02544c9df6b))
+-   force breaking change ([eaa774e](https://github.com/archimedes-projects/archimedes-js/commit/eaa774ea427be406071db5ddf544eabc87064c89))
+-   force breaking change ([2f50d1b](https://github.com/archimedes-projects/archimedes-js/commit/2f50d1b29b765378610d5b978bb1fc11a174453c))
+-   force breaking change ([0364e32](https://github.com/archimedes-projects/archimedes-js/commit/0364e32987ea705bfe8b23ff95e0d3caff9d640e))
+-   make cache more customizable ([7942e57](https://github.com/archimedes-projects/archimedes-js/commit/7942e57a05fd97b253dd8bd4539bd7d2b1b8e20b))
+-   remove window from setTimeout ([7cbab4d](https://github.com/archimedes-projects/archimedes-js/commit/7cbab4d4a9b5e55c2e3562c6dbbe10f4d95ffba5))
+-   rename evict cache to invalidate cache ([4874aee](https://github.com/archimedes-projects/archimedes-js/commit/4874aee2dffdec8b393d7c258f01cac6a82ee9c6))
+-   use export type ([107c758](https://github.com/archimedes-projects/archimedes-js/commit/107c758c510edebfff4efe44c5e95fe26b9c7d55))
+
+-   feat!: force breaking change ([980a4a1](https://github.com/archimedes-projects/archimedes-js/commit/980a4a1a672221df950dc41b820a0fb8e3ae47d5))
+
+### BREAKING CHANGES
+
+-   rename evict cache to invalidate cache
+-   force breaking change
+-   force breaking change
+-   force breaking change
+-   force breaking change
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0
+
+# @archimedes/arch [2.0.0-beta.8](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.7...@archimedes/arch@2.0.0-beta.8) (2022-01-21)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
+# @archimedes/arch [2.0.0-beta.7](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.6...@archimedes/arch@2.0.0-beta.7) (2022-01-21)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
+# @archimedes/arch [2.0.0-beta.6](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.5...@archimedes/arch@2.0.0-beta.6) (2022-01-21)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
 # @archimedes/arch [2.0.0-beta.5](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0-beta.4...@archimedes/arch@2.0.0-beta.5) (2022-01-21)
 
 ### Features
