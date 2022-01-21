@@ -1,3 +1,9 @@
+# @archimedes/components [1.0.0-beta.6](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/components@1.0.0-beta.5...@archimedes/components@1.0.0-beta.6) (2022-01-21)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.0.0-beta.3
+
 # @archimedes/components [1.0.0-beta.5](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/components@1.0.0-beta.4...@archimedes/components@1.0.0-beta.5) (2022-01-21)
 
 ### Dependencies
