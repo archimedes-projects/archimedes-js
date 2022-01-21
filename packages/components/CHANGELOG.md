@@ -1,3 +1,9 @@
+# @archimedes/components [1.6.0](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/components@1.5.0...@archimedes/components@1.6.0) (2022-01-21)
+
+### Features
+
+-   force version publish ([be00ab4](https://github.com/archimedes-projects/archimedes-js/commit/be00ab48c39f72a4b9a6b2135b1f0d1d909c9f10))
+
 # @archimedes/components 1.0.0 (2022-01-21)
 
 ### Bug Fixes
