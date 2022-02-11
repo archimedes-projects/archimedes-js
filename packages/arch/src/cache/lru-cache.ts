@@ -24,4 +24,8 @@ export class LruCache<T> implements Cache<T> {
   has(key: CacheKey) {
     return this._lru.has(key)
   }
+
+  create(): Cache<T> {
+    return new LruCache()
+  }
 }
