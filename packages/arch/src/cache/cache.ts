@@ -8,6 +8,7 @@ export interface CacheResult<T = unknown> {
 }
 
 export interface Cache<T = unknown> {
+  create(): Cache<T>
   get(key: CacheKey): CacheResult<T> | undefined
   set(key: CacheKey, value: CacheResult<T>): void
   has(key: CacheKey): boolean

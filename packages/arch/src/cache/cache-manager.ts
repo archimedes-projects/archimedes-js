@@ -25,7 +25,7 @@ export class CacheManager {
 
   set(cacheKey: CacheKey, fn: (...fnArgs: unknown[]) => unknown, ...args: any[]): unknown {
     if (!this.caches.has(cacheKey)) {
-      this.caches.set(cacheKey, this.cacheOptions.cache)
+      this.caches.set(cacheKey, this.cacheOptions.cache.create())
     }
 
     const existingCache = this.caches.get(cacheKey)!

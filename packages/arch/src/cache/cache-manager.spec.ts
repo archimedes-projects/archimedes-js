@@ -51,6 +51,7 @@ describe('CacheManager', () => {
   it('should use custom cache', () => {
     MockDatetime.mock(Datetime.fromIsoString('2020-01-01T00:00:00Z'))
     const cache = mock<Cache>()
+    when(cache.create()).thenReturn(instance(cache))
     when(cache.get(anyString())).thenReturn({ createdAt: 1, returns: 1 })
     const { cacheManager } = setup({ cache: instance(cache) })
     let count = 0
@@ -71,6 +72,7 @@ describe('CacheManager', () => {
     MockDatetime.mock(Datetime.fromIsoString('2020-01-01T00:00:00Z'))
     const mockedDatetime = Datetime.now().toMillis() - 1
     const cache = mock<Cache>()
+    when(cache.create()).thenReturn(instance(cache))
     when(cache.get(anyString())).thenReturn({ createdAt: mockedDatetime, returns: 1 })
     const { cacheManager } = setup({ cache: instance(cache), ttl: 0 })
     let count = 0
@@ -89,6 +91,7 @@ describe('CacheManager', () => {
     MockDatetime.mock(Datetime.fromIsoString('2020-01-01T00:00:00Z'))
     const mockedDatetime = Datetime.now().toMillis() - 1
     const cache = mock<Cache>()
+    when(cache.create()).thenReturn(instance(cache))
     when(cache.get(anyString())).thenReturn({ createdAt: mockedDatetime, returns: 1 })
     const { cacheManager } = setup({ cache: instance(cache), ttl: 1 })
     let count = 0
@@ -101,6 +104,22 @@ describe('CacheManager', () => {
     cacheManager.set('foo', fn)
 
     verify(cache.delete(anyString())).never()
+  })
+
+  it('should use different caches for different keys', () => {
+    MockDatetime.mock(Datetime.fromIsoString('2020-01-01T00:00:00Z'))
+    const mockedDatetime = Datetime.now().toMillis() - 1
+    const cache = mock<Cache>()
+    when(cache.create()).thenReturn(instance(cache))
+    when(cache.get(anyString())).thenReturn({ createdAt: mockedDatetime, returns: 1 })
+    const { cacheManager } = setup({ cache: instance(cache) })
+
+    const fn = (): string => 'foo'
+
+    cacheManager.set('foo', () => fn())
+    cacheManager.set('bar', () => fn())
+
+    verify(cache.create()).twice()
   })
 })
 
