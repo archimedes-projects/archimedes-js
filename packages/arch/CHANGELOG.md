@@ -1,3 +1,9 @@
+## @archimedes/arch [2.0.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0...@archimedes/arch@2.0.1) (2022-02-11)
+
+### Bug Fixes
+
+-   add clean cache for each cache key ([59e01d5](https://github.com/archimedes-projects/archimedes-js/commit/59e01d54fa749554d4f3d918ab73dacce9bee312))
+
 # @archimedes/arch [2.0.0](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@1.0.0...@archimedes/arch@2.0.0) (2022-01-21)
 
 ### Features
