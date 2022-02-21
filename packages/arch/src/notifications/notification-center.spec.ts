@@ -1,5 +1,14 @@
 import { NotificationCenter } from './notification-center'
-import { Subject } from '@archimedes/utils'
+import { Subject, Timer } from '@archimedes/utils'
+
+jest.mock('@archimedes/utils', () => {
+  return {
+    Subject: jest.fn(),
+    Timer: {
+      create: jest.fn()
+    }
+  }
+})
 
 describe('NotificationCenter', () => {
   it('should create a notification', () => {
@@ -54,11 +63,48 @@ describe('NotificationCenter', () => {
   it('should use the timeout configured when setTimeout is called', () => {
     const notificationTimeout = 10_000
     const notificationCenter = new NotificationCenter({ notificationTimeout })
-    jest.spyOn(global, 'setTimeout')
-
     notificationCenter.new({ message: 'foo' })
 
-    expect(setTimeout).toHaveBeenCalledTimes(1)
-    expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), notificationTimeout)
+    expect(Timer.create).toHaveBeenCalledTimes(1)
+    expect(Timer.create).toHaveBeenCalledWith(expect.any(Function), notificationTimeout)
+  })
+
+  it('should pause the timeout', () => {
+    const notificationCenter = new NotificationCenter()
+
+    notificationCenter.new({ message: 'foo' })
+    notificationCenter.timer = {
+      pause: jest.fn()
+    }
+    notificationCenter.pause()
+
+    expect(notificationCenter.timer.pause).toHaveBeenCalledTimes(1)
+  })
+
+  it('should resume the timeout', () => {
+    const notificationCenter = new NotificationCenter()
+
+    notificationCenter.new({ message: 'foo' })
+    notificationCenter.timer = {
+      resume: jest.fn()
+    }
+    notificationCenter.resume()
+
+    expect(notificationCenter.timer.resume).toHaveBeenCalledTimes(1)
+  })
+
+  it('should remove the notification closed and publish the changes', () => {
+    const notificationCenter = new NotificationCenter()
+    const fooNotification = { message: 'foo' }
+    const barNotification = { message: 'bar' }
+    const bazNotification = { message: 'baz' }
+    const publishSpy = jest.spyOn(notificationCenter, 'publish')
+
+    notificationCenter.notifications = [fooNotification, barNotification, bazNotification]
+    notificationCenter.close(1)
+
+    expect(notificationCenter.notifications.length).toBe(2)
+    expect(notificationCenter.notifications).toEqual([fooNotification, bazNotification])
+    expect(publishSpy).toHaveBeenCalledTimes(1)
   })
 })
