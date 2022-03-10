@@ -1,5 +1,6 @@
 import { UseCase } from './use-case'
 import { Runner } from '../runner/runner'
+import { ExecutionOptions } from './execution-options'
 
 jest.mock('../runner/runner')
 
@@ -68,5 +69,17 @@ describe('UseCase', () => {
     await mockUseCase.execute()
 
     expect(calls).toBe(1)
+  })
+
+  it('should be able execute with more than one executions options', async () => {
+    class MockUseCase extends UseCase {
+      readonly = false
+      async internalExecute(): Promise<void> {}
+    }
+    const mockUseCase = new MockUseCase()
+
+    mockUseCase.execute(undefined, { foo: 'bar' } as ExecutionOptions & { foo: string })
+
+    expect(Runner.run).toBeCalledWith(mockUseCase, { inlineError: false, foo: 'bar' }, undefined)
   })
 })
