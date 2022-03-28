@@ -20,9 +20,10 @@ export abstract class UseCase<Result = void, Param = void> {
     this.subscriptions.delete(id)
   }
 
-  async execute(param: Param, executionOptions: ExecutionOptions = { inlineError: false }): Promise<Result> {
-    const value = (await Runner.run(this as any, executionOptions, param)) as Result
-    this.subscriptions.forEach(x => x({ result: value, param, executionOptions }))
+  async execute(param: Param, executionOptions?: Partial<ExecutionOptions>): Promise<Result> {
+    const options: ExecutionOptions = { inlineError: false, ...executionOptions }
+    const value = (await Runner.run(this as any, options, param)) as Result
+    this.subscriptions.forEach(x => x({ result: value, param, executionOptions: options }))
     return value
   }
 }
