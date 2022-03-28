@@ -1,3 +1,10 @@
+# @archimedes/arch [2.1.0](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.1...@archimedes/arch@2.1.0) (2022-03-28)
+
+### Features
+
+-   add export UseCase in index.ts to use in custom link ([d47502f](https://github.com/archimedes-projects/archimedes-js/commit/d47502f0c56f9ed0e6c0f469288e4d539a90b563))
+-   change to optionals executions options in execute ([00dc49e](https://github.com/archimedes-projects/archimedes-js/commit/00dc49ef641913a09b82e6e41d21142df778c8dd))
+
 ## @archimedes/arch [2.0.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.0.0...@archimedes/arch@2.0.1) (2022-02-11)
 
 ### Bug Fixes
