@@ -1,3 +1,9 @@
+# @archimedes/utils [2.1.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.0.0...@archimedes/utils@2.1.0-beta.1) (2022-06-08)
+
+### Features
+
+-   set the default zone to 'utc' to fromFormat and fromObject methods from Luxon library ([dd414ca](https://github.com/archimedes-projects/archimedes-js/commit/dd414ca47b10a4bd2319ec9f266f3daf0af4a777))
+
 # @archimedes/utils [2.0.0](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@1.0.0...@archimedes/utils@2.0.0) (2022-01-21)
 
 ### Features
