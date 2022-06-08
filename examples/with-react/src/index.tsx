@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
 import { CacheInvalidations, CacheLink, CacheManager, ExecutorLink, LoggerLink, Runner } from '@archimedes/arch'
@@ -14,9 +14,10 @@ CacheInvalidations.set(QuxCmd.name, [BazQry.name])
 
 Runner.createChain([new CacheLink(new CacheManager()), new ExecutorLink(), new LoggerLink(console)])
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 )
