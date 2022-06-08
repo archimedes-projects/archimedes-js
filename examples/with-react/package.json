@@ -1,6 +1,6 @@
 {
   "name": "with-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@archimedes/arch": "2.1.1-beta.1",
