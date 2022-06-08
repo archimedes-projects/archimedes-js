@@ -1,7 +1,7 @@
 import { injectable } from 'tsyringe'
-import { EvictCache, Query } from '@archimedes/arch'
+import { InvalidateCache, Query } from '@archimedes/arch'
 
-@EvictCache
+@InvalidateCache
 @injectable()
 export class BazQry extends Query<number> {
   async internalExecute(): Promise<number> {
