@@ -1,3 +1,9 @@
+# @archimedes/utils [2.1.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0-beta.1...@archimedes/utils@2.1.0-beta.2) (2022-06-08)
+
+### Bug Fixes
+
+-   change Settings.defaultZoneName to Settings.defaultZone of Luxon settings ([8d8a7ab](https://github.com/archimedes-projects/archimedes-js/commit/8d8a7ab7f44e1fd061cfc40198fefc705195de35))
+
 # @archimedes/utils [2.1.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.0.0...@archimedes/utils@2.1.0-beta.1) (2022-06-08)
 
 ### Features
