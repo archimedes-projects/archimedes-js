@@ -1,7 +1,7 @@
 import { injectable } from 'tsyringe'
-import { Command, EvictCache } from '@archimedes/arch'
+import { Command, InvalidateCache } from '@archimedes/arch'
 
-@EvictCache
+@InvalidateCache
 @injectable()
 export class FooCmd extends Command<number> {
   async internalExecute(value: number) {}

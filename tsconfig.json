@@ -38,7 +38,7 @@
       "path": "examples/example-angular"
     },
     {
-      "path": "examples/example-react"
+      "path": "examples/with-react"
     }
   ]
 }
