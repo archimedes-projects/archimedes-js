@@ -137,6 +137,14 @@ describe('Datetime', () => {
     expect(actual).toBe('1970-01-01T00:00:00Z')
   })
 
+  it('should create the exact date when using new', () => {
+    const datetime = Datetime.new(2020, 12, 31, 0, 0, 0)
+
+    const actual = datetime.toIso()
+
+    expect(actual).toBe('2020-12-31T00:00:00Z')
+  })
+
   it('should compare when one date is greater', () => {
     const today = Datetime.fromIsoString('2019-07-22T01:02:03Z')
     const tomorrow = today.add({ day: 1 })

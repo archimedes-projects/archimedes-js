@@ -43,19 +43,22 @@ export class Datetime {
         millisecond: 0,
         ...dateObject
       }
-      return new Datetime(LuxonDatetime.fromObject(defaultDateObject))
+      return new Datetime(LuxonDatetime.fromObject(defaultDateObject, { zone: 'utc' }))
     }
 
     return new Datetime(
-      LuxonDatetime.fromObject({
-        year: dateObject,
-        month,
-        day,
-        hour,
-        minute,
-        second,
-        millisecond
-      })
+      LuxonDatetime.fromObject(
+        {
+          year: dateObject,
+          month,
+          day,
+          hour,
+          minute,
+          second,
+          millisecond
+        },
+        { zone: 'utc' }
+      )
     )
   }
 
@@ -82,7 +85,11 @@ export class Datetime {
    * @param format YYYY/MM/DD
    * @param options
    */
-  static fromFormat(value: string, format: string, options: { locale: string } = { locale: 'es-ES' }) {
+  static fromFormat(
+    value: string,
+    format: string,
+    options: { locale: string; zone: string } = { locale: 'es-ES', zone: 'utc' }
+  ) {
     return new Datetime(LuxonDatetime.fromFormat(value, format, options))
   }
 
