@@ -9,7 +9,7 @@ import { InvalidationPolicy } from '../../cache/invalidation-policy'
 import { Command } from '../../use-case/command'
 
 describe('CacheLink', () => {
-  it('should use the cache', async () => {
+  it('should not use the cache when cache manager has not this execution registered', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.has(anything(), anything())).thenReturn(false)
 
