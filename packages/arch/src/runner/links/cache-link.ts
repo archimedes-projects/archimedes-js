@@ -13,7 +13,7 @@ export class CacheLink extends BaseLink {
   async next(context: Context): Promise<void> {
     const name = context.useCase.constructor.name
 
-    if (!this.cacheManager.has(name, [context.param])) {
+    if (context.executionOptions.invalidateCache || !this.cacheManager.has(name, [context.param])) {
       this.nextLink.next(context)
     }
 
