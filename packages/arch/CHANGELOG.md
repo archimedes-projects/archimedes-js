@@ -1,3 +1,9 @@
+# @archimedes/arch [2.2.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.1.1-beta.2...@archimedes/arch@2.2.0-beta.1) (2022-06-30)
+
+### Features
+
+-   add 'invalidateCache' flag to the CacheLink ([d2a26ed](https://github.com/archimedes-projects/archimedes-js/commit/d2a26edf335671403fa3192e91cb8910c02b07b0))
+
 ## @archimedes/arch [2.1.1-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.1.1-beta.1...@archimedes/arch@2.1.1-beta.2) (2022-06-08)
 
 ### Dependencies
