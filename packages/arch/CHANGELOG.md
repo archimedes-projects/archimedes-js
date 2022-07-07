@@ -1,3 +1,13 @@
+# @archimedes/arch [2.2.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.1...@archimedes/arch@2.2.0-beta.2) (2022-07-07)
+
+### Features
+
+-   **notification-center:** use Timer to create timeouts. Add pause, resume and close methods ([56cf40e](https://github.com/archimedes-projects/archimedes-js/commit/56cf40e0ee63dda6740aa40f92befe08004117d3))
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.1.0-beta.3
+
 # @archimedes/arch [2.2.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.1.1-beta.2...@archimedes/arch@2.2.0-beta.1) (2022-06-30)
 
 ### Features
