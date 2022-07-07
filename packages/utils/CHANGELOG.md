@@ -1,3 +1,9 @@
+# @archimedes/utils [2.1.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0-beta.2...@archimedes/utils@2.1.0-beta.3) (2022-07-07)
+
+### Features
+
+-   add Timer class to wrap timeout operations like resume or pause ([89f817d](https://github.com/archimedes-projects/archimedes-js/commit/89f817daa36aabcccf2263cb695ba0f4500e6995))
+
 # @archimedes/utils [2.1.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0-beta.1...@archimedes/utils@2.1.0-beta.2) (2022-06-08)
 
 ### Bug Fixes
