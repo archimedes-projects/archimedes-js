@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core'
-import { Command, EvictCache } from '@archimedes/arch'
+import { Command, InvalidateCache, UseCaseKey } from '@archimedes/arch'
 
-@EvictCache
+@UseCaseKey('FooCmd')
+@InvalidateCache
 @Injectable({
   providedIn: 'root'
 })

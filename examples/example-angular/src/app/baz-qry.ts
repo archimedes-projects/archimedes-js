@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core'
-import { EvictCache, Query } from '@archimedes/arch'
+import { InvalidateCache, Query, UseCaseKey } from '@archimedes/arch'
 
-@EvictCache
+@UseCaseKey('BazQry')
+@InvalidateCache
 @Injectable({
   providedIn: 'root'
 })

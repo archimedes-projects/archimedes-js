@@ -4,6 +4,8 @@ import { CacheManager } from '../../cache/cache-manager'
 import { InvalidationPolicy } from '../../cache/invalidation-policy'
 import { CacheKey } from '../../cache/cache-key'
 import { CacheInvalidations } from '../cache-invalidations'
+import { USE_CASE_KEY } from '../../cache/use-case-key'
+import { Class } from '@archimedes/utils'
 
 export class CacheLink extends BaseLink {
   constructor(private readonly cacheManager: CacheManager) {
@@ -11,7 +13,11 @@ export class CacheLink extends BaseLink {
   }
 
   async next(context: Context): Promise<void> {
-    const name = context.useCase.constructor.name
+    const asClass = context.useCase as unknown as Class
+    const name =
+      asClass.prototype?.[USE_CASE_KEY] ??
+      asClass.constructor.prototype?.[USE_CASE_KEY] ??
+      context.useCase.constructor.name
 
     if (context.executionOptions.invalidateCache || !this.cacheManager.has(name, [context.param])) {
       this.nextLink.next(context)
