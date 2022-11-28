@@ -7,8 +7,8 @@ export function InvalidateCache(clazz: Class): void {
   const metadata: Class[] | undefined = Reflect.getMetadata('design:paramtypes', clazz)
   if (metadata !== undefined) {
     CacheInvalidations.set(
-      clazz.name,
-      metadata.filter(x => x.prototype instanceof UseCase).map(x => x.name)
+      clazz.prototype.key,
+      metadata.filter(x => x.prototype instanceof UseCase).map(x => x.prototype.key)
     )
   }
 }

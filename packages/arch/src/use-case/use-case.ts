@@ -12,7 +12,7 @@ export abstract class UseCase<Result = void, Param = void> {
   private static currentId = 0
   private subscriptions = new Map<Id, Fn<Result, Param>>()
 
-  get key(): CacheKey {
+  public get key(): CacheKey {
     return (
       this.constructor.prototype?.[USE_CASE_KEY] ?? this.constructor.prototype?.[USE_CASE_KEY] ?? this.constructor.name
     )
@@ -29,7 +29,7 @@ export abstract class UseCase<Result = void, Param = void> {
   }
 
   async execute(param: Param, executionOptions?: Partial<ExecutionOptions>): Promise<Result> {
-    const options: ExecutionOptions = { inlineError: false, ...executionOptions }
+    const options: ExecutionOptions = { inlineError: false, invalidateCache: false, ...executionOptions }
     const value = (await Runner.run(this as any, options, param)) as Result
     this.subscriptions.forEach(x => x({ result: value, param, executionOptions: options }))
     return value
