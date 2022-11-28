@@ -1,15 +1,16 @@
 import { BazQry } from './baz-qry'
 import { injectable } from 'tsyringe'
-import { InvalidateCache, Query } from '@archimedes/arch'
+import { InvalidateCache, Query, UseCaseKey } from '@archimedes/arch'
 
 @InvalidateCache
+@UseCaseKey('BarQry')
 @injectable()
 export class BarQry extends Query<number> {
   constructor(private readonly bazQry: BazQry) {
     super()
   }
 
-  async internalExecute(param: void): Promise<number> {
+  async internalExecute(): Promise<number> {
     return this.bazQry.execute()
   }
 }

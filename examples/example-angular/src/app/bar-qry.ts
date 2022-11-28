@@ -1,8 +1,8 @@
 import { BazQry } from './baz-qry'
 import { Injectable } from '@angular/core'
-import { EvictCache, Query } from '@archimedes/arch'
+import { Query, UseCaseKey } from '@archimedes/arch'
 
-@EvictCache
+@UseCaseKey('BarQry')
 @Injectable({
   providedIn: 'root'
 })

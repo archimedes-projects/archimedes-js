@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { useDi } from './use-di'
 import { FooCmd } from './foo-cmd'

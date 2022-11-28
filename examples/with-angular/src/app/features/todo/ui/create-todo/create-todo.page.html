@@ -1,0 +1,11 @@
+<h2>CREATE TODO</h2>
+
+<label>
+  Title
+  <input type="text" [(ngModel)]="title" />
+</label>
+
+<div class="actions">
+  <a [routerLink]="['/']">Back</a>
+  <button (click)="saveTodo()">Save</button>
+</div>

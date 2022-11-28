@@ -16,7 +16,7 @@ describe('UseCase', () => {
 
     mockUseCase.execute(42)
 
-    expect(Runner.run).toBeCalledWith(mockUseCase, { inlineError: false }, 42)
+    expect(Runner.run).toBeCalledWith(mockUseCase, { inlineError: false, invalidateCache: false }, 42)
   })
 
   it('should subscribe', async () => {
@@ -80,6 +80,10 @@ describe('UseCase', () => {
 
     mockUseCase.execute(undefined, { foo: 'bar' } as ExecutionOptions & { foo: string })
 
-    expect(Runner.run).toBeCalledWith(mockUseCase, { inlineError: false, foo: 'bar' }, undefined)
+    expect(Runner.run).toBeCalledWith(
+      mockUseCase,
+      { inlineError: false, invalidateCache: false, foo: 'bar' },
+      undefined
+    )
   })
 })
