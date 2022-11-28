@@ -15,7 +15,7 @@
     "build:components": "cd packages/components && npm run build",
     "build:packages": "parcel build packages/arch packages/utils",
     "watch": "parcel watch packages/arch packages/utils",
-    "test": "jest",
+    "test": "jest; node .github/setup.js",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "test:ci": "jest --ci",
@@ -57,5 +57,9 @@
   },
   "engines": {
     "node": "17.3.0"
+  },
+  "volta": {
+    "node": "17.3.0",
+    "npm": "8.3.0"
   }
 }
