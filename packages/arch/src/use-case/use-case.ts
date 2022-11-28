@@ -1,3 +1,5 @@
+import { CacheKey } from '../cache/cache-key'
+import { USE_CASE_KEY } from '../cache/use-case-key'
 import { Runner } from '../runner/runner'
 import { ExecutionOptions } from './execution-options'
 
@@ -9,6 +11,12 @@ export abstract class UseCase<Result = void, Param = void> {
   abstract internalExecute(param: Param): Promise<Result>
   private static currentId = 0
   private subscriptions = new Map<Id, Fn<Result, Param>>()
+
+  get key(): CacheKey {
+    return (
+      this.constructor.prototype?.[USE_CASE_KEY] ?? this.constructor.prototype?.[USE_CASE_KEY] ?? this.constructor.name
+    )
+  }
 
   subscribe(fn: Fn<Result, Param>): Id {
     const id = UseCase.currentId++
