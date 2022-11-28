@@ -1,3 +1,11 @@
+# @archimedes/arch [2.2.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.2...@archimedes/arch@2.2.0-beta.3) (2022-11-28)
+
+### Features
+
+-   add key getter to UseCase ([495f34a](https://github.com/archimedes-projects/archimedes-js/commit/495f34ada6b416272b07d63b4ec9709a7868cd88))
+-   add new UseCase key getter to CacheLink and InvalidateCache decorator ([47ce3ba](https://github.com/archimedes-projects/archimedes-js/commit/47ce3ba149ba5cd9ddec52c33d300b1193c2fd45))
+-   add use case key ([79b1ed6](https://github.com/archimedes-projects/archimedes-js/commit/79b1ed68dfebdab9a618ced2eb4efbeb132a3c19))
+
 # @archimedes/arch [2.2.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.1...@archimedes/arch@2.2.0-beta.2) (2022-07-07)
 
 ### Features
