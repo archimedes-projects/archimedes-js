@@ -22,6 +22,10 @@ export class TodoListPage implements OnInit, OnDestroy {
     })
   }
 
+  async refreshTodos() {
+    this.todos = await this.getTodosQry.execute(undefined, { invalidateCache: true })
+  }
+
   ngOnDestroy(): void {
     this.completeTodoCmd.unsubscribe(this.completeSubscriptionId)
   }
