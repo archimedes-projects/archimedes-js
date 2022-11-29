@@ -1,3 +1,9 @@
+# @archimedes/arch [2.2.0-beta.4](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.3...@archimedes/arch@2.2.0-beta.4) (2022-11-29)
+
+### Features
+
+-   cache-link invalidate cache with invalidateCache option ([cdf5b6d](https://github.com/archimedes-projects/archimedes-js/commit/cdf5b6d0e48a320b3b42720f39289acccf09c9bd))
+
 # @archimedes/arch [2.2.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.2...@archimedes/arch@2.2.0-beta.3) (2022-11-28)
 
 ### Features
