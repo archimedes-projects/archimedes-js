@@ -1,8 +1,9 @@
 import { Inject, Injectable } from '@angular/core'
-import { Command } from '@archimedes/arch'
+import { Command, UseCaseKey } from '@archimedes/arch'
 import { InjectionTokens } from 'src/core/di/injection-tokens'
 import { TodoRepository } from '../domain/todo-repository'
 
+@UseCaseKey('CompleteTodoCmd')
 @Injectable({
   providedIn: 'root'
 })
