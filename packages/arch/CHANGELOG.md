@@ -1,3 +1,18 @@
+# @archimedes/arch [2.2.0](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.1.0...@archimedes/arch@2.2.0) (2022-11-29)
+
+### Features
+
+-   add 'invalidateCache' flag to the CacheLink ([d2a26ed](https://github.com/archimedes-projects/archimedes-js/commit/d2a26edf335671403fa3192e91cb8910c02b07b0))
+-   add key getter to UseCase ([495f34a](https://github.com/archimedes-projects/archimedes-js/commit/495f34ada6b416272b07d63b4ec9709a7868cd88))
+-   add new UseCase key getter to CacheLink and InvalidateCache decorator ([47ce3ba](https://github.com/archimedes-projects/archimedes-js/commit/47ce3ba149ba5cd9ddec52c33d300b1193c2fd45))
+-   add use case key ([79b1ed6](https://github.com/archimedes-projects/archimedes-js/commit/79b1ed68dfebdab9a618ced2eb4efbeb132a3c19))
+-   cache-link invalidate cache with invalidateCache option ([cdf5b6d](https://github.com/archimedes-projects/archimedes-js/commit/cdf5b6d0e48a320b3b42720f39289acccf09c9bd))
+-   **notification-center:** use Timer to create timeouts. Add pause, resume and close methods ([56cf40e](https://github.com/archimedes-projects/archimedes-js/commit/56cf40e0ee63dda6740aa40f92befe08004117d3))
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.1.0
+
 # @archimedes/arch [2.2.0-beta.4](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.3...@archimedes/arch@2.2.0-beta.4) (2022-11-29)
 
 ### Features
