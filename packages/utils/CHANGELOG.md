@@ -1,3 +1,21 @@
+# @archimedes/utils [2.1.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0-beta.2...@archimedes/utils@2.1.0-beta.3) (2022-07-07)
+
+### Features
+
+-   add Timer class to wrap timeout operations like resume or pause ([89f817d](https://github.com/archimedes-projects/archimedes-js/commit/89f817daa36aabcccf2263cb695ba0f4500e6995))
+
+# @archimedes/utils [2.1.0-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0-beta.1...@archimedes/utils@2.1.0-beta.2) (2022-06-08)
+
+### Bug Fixes
+
+-   change Settings.defaultZoneName to Settings.defaultZone of Luxon settings ([8d8a7ab](https://github.com/archimedes-projects/archimedes-js/commit/8d8a7ab7f44e1fd061cfc40198fefc705195de35))
+
+# @archimedes/utils [2.1.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.0.0...@archimedes/utils@2.1.0-beta.1) (2022-06-08)
+
+### Features
+
+-   set the default zone to 'utc' to fromFormat and fromObject methods from Luxon library ([dd414ca](https://github.com/archimedes-projects/archimedes-js/commit/dd414ca47b10a4bd2319ec9f266f3daf0af4a777))
+
 # @archimedes/utils [2.0.0](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@1.0.0...@archimedes/utils@2.0.0) (2022-01-21)
 
 ### Features

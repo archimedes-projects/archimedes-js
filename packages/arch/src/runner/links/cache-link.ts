@@ -4,6 +4,7 @@ import { CacheManager } from '../../cache/cache-manager'
 import { InvalidationPolicy } from '../../cache/invalidation-policy'
 import { CacheKey } from '../../cache/cache-key'
 import { CacheInvalidations } from '../cache-invalidations'
+import { UseCase } from '../../use-case/use-case'
 
 export class CacheLink extends BaseLink {
   constructor(private readonly cacheManager: CacheManager) {
@@ -11,17 +12,22 @@ export class CacheLink extends BaseLink {
   }
 
   async next(context: Context): Promise<void> {
-    const name = context.useCase.constructor.name
+    const asClass = context.useCase as unknown as UseCase
+    const useCaseKey = asClass.key
 
-    if (!this.cacheManager.has(name, [context.param])) {
+    if (context.executionOptions.invalidateCache) {
+      this.cacheManager.invalidate(useCaseKey)
+    }
+
+    if (!this.cacheManager.has(useCaseKey, [context.param])) {
       this.nextLink.next(context)
     }
 
     context.result = context.useCase.readonly
-      ? (this.cacheManager.set(name, () => context.result, context.param) as Promise<unknown>)
+      ? (this.cacheManager.set(useCaseKey, () => context.result, context.param) as Promise<unknown>)
       : context.result
 
-    this.invalidateCache(name)
+    this.invalidateCache(useCaseKey)
   }
 
   private invalidateCache(cacheKey: CacheKey) {

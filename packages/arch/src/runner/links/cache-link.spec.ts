@@ -9,7 +9,7 @@ import { InvalidationPolicy } from '../../cache/invalidation-policy'
 import { Command } from '../../use-case/command'
 
 describe('CacheLink', () => {
-  it('should use the cache', async () => {
+  it('should not use the cache when cache manager has not this execution registered', async () => {
     const { link, cacheManager, cacheLink } = setup()
     when(cacheManager.has(anything(), anything())).thenReturn(false)
 
@@ -29,6 +29,28 @@ describe('CacheLink', () => {
     await cacheLink.next(context)
 
     verify(link.next(anything())).once()
+  })
+
+  it("should invalidate the cache when 'invalidateCache' flag is true", async () => {
+    const { link, cacheManager, cacheLink } = setup()
+
+    class MockUseCase extends UseCase<unknown, unknown> {
+      readonly = true
+
+      async internalExecute(): Promise<void> {}
+    }
+
+    const context = Context.create({
+      useCase: new MockUseCase(),
+      param: undefined,
+      executionOptions: { inlineError: false, invalidateCache: true }
+    })
+    cacheLink.setNext(instance(link))
+
+    await cacheLink.next(context)
+
+    verify(link.next(anything())).once()
+    verify(cacheManager.invalidate(anything())).once()
   })
 
   it('should break the link if it is cached', async () => {

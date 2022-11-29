@@ -35,10 +35,10 @@
       "path": "packages/components"
     },
     {
-      "path": "examples/example-angular"
+      "path": "examples/with-angular"
     },
     {
-      "path": "examples/example-react"
+      "path": "examples/with-react"
     }
   ]
 }

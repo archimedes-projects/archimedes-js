@@ -3,10 +3,9 @@
   "exclude": ["node_modules"],
   "include": ["src", "types/jsx.d.ts"],
   "compilerOptions": {
-    "target": "ESNext",
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "module": "ESNext",
+    "module": "esnext",
+    "target": "es2017",
     "declarationDir": "./typings",
     "jsx": "react",
     "jsxFactory": "h"

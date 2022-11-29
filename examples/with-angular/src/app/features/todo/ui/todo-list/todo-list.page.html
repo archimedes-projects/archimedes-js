@@ -1,0 +1,15 @@
+<h2>TODO LIST</h2>
+
+<div class="actions">
+  <a [routerLink]="['/create']">Create</a>
+  <button (click)="refreshTodos()">Save</button>
+</div>
+<section>
+  <ul>
+    <li *ngFor="let todo of todos">
+      <button class="todo" [class.completed]="todo.completed" tabindex="0" (click)="completeTodo(todo)">
+        <span>{{todo.title}}</span>
+      </button>
+    </li>
+  </ul>
+</section>

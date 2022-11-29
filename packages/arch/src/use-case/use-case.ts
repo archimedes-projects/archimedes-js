@@ -1,3 +1,5 @@
+import { CacheKey } from '../cache/cache-key'
+import { USE_CASE_KEY } from '../cache/use-case-key'
 import { Runner } from '../runner/runner'
 import { ExecutionOptions } from './execution-options'
 
@@ -10,6 +12,12 @@ export abstract class UseCase<Result = void, Param = void> {
   private static currentId = 0
   private subscriptions = new Map<Id, Fn<Result, Param>>()
 
+  public get key(): CacheKey {
+    return (
+      this.constructor.prototype?.[USE_CASE_KEY] ?? this.constructor.prototype?.[USE_CASE_KEY] ?? this.constructor.name
+    )
+  }
+
   subscribe(fn: Fn<Result, Param>): Id {
     const id = UseCase.currentId++
     this.subscriptions.set(id, fn)
@@ -21,7 +29,7 @@ export abstract class UseCase<Result = void, Param = void> {
   }
 
   async execute(param: Param, executionOptions?: Partial<ExecutionOptions>): Promise<Result> {
-    const options: ExecutionOptions = { inlineError: false, ...executionOptions }
+    const options: ExecutionOptions = { inlineError: false, invalidateCache: false, ...executionOptions }
     const value = (await Runner.run(this as any, options, param)) as Result
     this.subscriptions.forEach(x => x({ result: value, param, executionOptions: options }))
     return value

@@ -13,10 +13,10 @@ export class MockDatetime {
   }
 
   static mockTimezone(timeZone: string) {
-    Settings.defaultZoneName = timeZone
+    Settings.defaultZone = timeZone
   }
 
   static resetMockTimezone() {
-    Settings.defaultZoneName = 'utc'
+    Settings.defaultZone = 'utc'
   }
 }
