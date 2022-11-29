@@ -35,9 +35,6 @@
       "path": "packages/components"
     },
     {
-      "path": "examples/example-angular"
-    },
-    {
       "path": "examples/with-angular"
     },
     {

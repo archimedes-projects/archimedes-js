@@ -1,6 +1,7 @@
-import { container } from './container'
+import { useMemo } from 'react'
 import { constructor } from 'tsyringe/dist/typings/types'
+import { container } from './core/di/container'
 
 export function useDi<T>(token: constructor<T> | string) {
-  return container.resolve(token)
+  return useMemo(() => container.resolve(token), [token])
 }
