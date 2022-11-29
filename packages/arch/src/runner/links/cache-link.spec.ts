@@ -31,7 +31,7 @@ describe('CacheLink', () => {
     verify(link.next(anything())).once()
   })
 
-  it("should not use the cache when 'invalidateCache' flag is true", async () => {
+  it("should invalidate the cache when 'invalidateCache' flag is true", async () => {
     const { link, cacheManager, cacheLink } = setup()
 
     class MockUseCase extends UseCase<unknown, unknown> {
@@ -50,7 +50,7 @@ describe('CacheLink', () => {
     await cacheLink.next(context)
 
     verify(link.next(anything())).once()
-    verify(cacheManager.has(anything(), anything())).never()
+    verify(cacheManager.invalidate(anything())).once()
   })
 
   it('should break the link if it is cached', async () => {

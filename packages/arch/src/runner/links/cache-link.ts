@@ -15,7 +15,11 @@ export class CacheLink extends BaseLink {
     const asClass = context.useCase as unknown as UseCase
     const useCaseKey = asClass.key
 
-    if (context.executionOptions.invalidateCache || !this.cacheManager.has(useCaseKey, [context.param])) {
+    if (context.executionOptions.invalidateCache) {
+      this.cacheManager.invalidate(useCaseKey)
+    }
+
+    if (!this.cacheManager.has(useCaseKey, [context.param])) {
       this.nextLink.next(context)
     }
 
