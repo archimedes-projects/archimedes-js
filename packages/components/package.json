@@ -1,6 +1,6 @@
 {
   "name": "@archimedes/components",
-  "version": "1.6.2-beta.1",
+  "version": "1.6.2",
   "description": "Archimedes components",
   "keywords": [
     "stencil"
@@ -45,6 +45,6 @@
     "puppeteer": "14.3.0"
   },
   "dependencies": {
-    "@archimedes/utils": "2.1.1-beta.1"
+    "@archimedes/utils": "2.1.1"
   }
 }
