@@ -1,3 +1,9 @@
+# @archimedes/utils [2.1.0-beta.4](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0-beta.3...@archimedes/utils@2.1.0-beta.4) (2023-05-24)
+
+### Bug Fixes
+
+-   luxon [#6015](https://github.com/archimedes-projects/archimedes-js/issues/6015) vulnerability ([093141c](https://github.com/archimedes-projects/archimedes-js/commit/093141c981f0b62767e2760d5d518478aeaabbc5))
+
 # @archimedes/utils [2.1.0-beta.3](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0-beta.2...@archimedes/utils@2.1.0-beta.3) (2022-07-07)
 
 ### Features
