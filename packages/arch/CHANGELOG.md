@@ -1,3 +1,9 @@
+# @archimedes/arch [2.2.0-beta.5](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.4...@archimedes/arch@2.2.0-beta.5) (2023-05-24)
+
+### Dependencies
+
+-   **@archimedes/utils:** upgraded to 2.1.0-beta.4
+
 # @archimedes/arch [2.2.0-beta.4](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/arch@2.2.0-beta.3...@archimedes/arch@2.2.0-beta.4) (2022-11-29)
 
 ### Features
