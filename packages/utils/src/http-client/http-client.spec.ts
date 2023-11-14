@@ -1,4 +1,4 @@
-import { HttpClientCreateOptions, HttpClient } from './http-client'
+import { HttpClient, HttpClientCreateOptions } from './http-client'
 
 describe('HttpClient', () => {
   it('should configure base url', async () => {
@@ -124,7 +124,7 @@ describe('HttpClient', () => {
         method: 'GET'
       },
       result: '',
-      status: undefined
+      status: 200
     })
   })
 })
@@ -135,7 +135,8 @@ function setup<T>(options?: HttpClientCreateOptions & Partial<{ result: T }>) {
     Promise.resolve({
       text: () => Promise.resolve(JSON.stringify(options?.result ?? { foo: 'bar' })),
       ok: true,
-      headers: new Headers()
+      headers: new Headers(),
+      status: 200
     })
   )
   window.fetch = fetchMock
