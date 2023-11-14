@@ -1,3 +1,9 @@
+## @archimedes/utils [2.1.1-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.1-beta.1...@archimedes/utils@2.1.1-beta.2) (2023-11-14)
+
+### Bug Fixes
+
+-   **datetime:** add non-null assertion to daysInMonth getter and difference method ([dadb6c9](https://github.com/archimedes-projects/archimedes-js/commit/dadb6c90858c293f0c8d021889daf528ad74f51b))
+
 ## @archimedes/utils [2.1.1-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.0...@archimedes/utils@2.1.1-beta.1) (2023-05-24)
 
 ### Bug Fixes
