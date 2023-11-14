@@ -1,3 +1,9 @@
+# @archimedes/utils [2.2.0-beta.1](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.1-beta.2...@archimedes/utils@2.2.0-beta.1) (2023-11-14)
+
+### Features
+
+-   **datetime:** change \_value visibility to protected ([69dbc3d](https://github.com/archimedes-projects/archimedes-js/commit/69dbc3d88b090e042c6d9c483ece1e72aa301ea6))
+
 ## @archimedes/utils [2.1.1-beta.2](https://github.com/archimedes-projects/archimedes-js/compare/@archimedes/utils@2.1.1-beta.1...@archimedes/utils@2.1.1-beta.2) (2023-11-14)
 
 ### Bug Fixes
