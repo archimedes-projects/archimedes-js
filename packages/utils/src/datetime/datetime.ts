@@ -1,8 +1,8 @@
-import { DateTime as LuxonDatetime, Info } from 'luxon'
+import { Info, DateTime as LuxonDatetime } from 'luxon'
 import { DateObject } from './date-object'
 import { Duration } from './duration'
-import { StringUnitLength } from './string-unit-length'
 import { InfoOptions } from './info-options'
+import { StringUnitLength } from './string-unit-length'
 
 export interface DatetimeOptions {
   isLocal: boolean
@@ -114,7 +114,7 @@ export class Datetime {
   }
 
   get daysInMonth(): number {
-    return this._value.daysInMonth
+    return this._value.daysInMonth!
   }
 
   get year(): number {
@@ -173,7 +173,7 @@ export class Datetime {
 
   difference(datetime: Datetime): Duration {
     const iso8601 = this._value.diff(datetime._value).toISO()
-    return Duration.fromIso(iso8601)
+    return Duration.fromIso(iso8601!)
   }
 
   toIso() {
