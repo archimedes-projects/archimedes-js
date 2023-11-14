@@ -101,7 +101,7 @@ export class Datetime {
     return Info.weekdays(length, options)
   }
 
-  constructor(private readonly _value: LuxonDatetime, options: DatetimeOptions = { isLocal: false }) {
+  constructor(protected readonly _value: LuxonDatetime, options: DatetimeOptions = { isLocal: false }) {
     if (options.isLocal) {
       this._value = _value
     } else {
